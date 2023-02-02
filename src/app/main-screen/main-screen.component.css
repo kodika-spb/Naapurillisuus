@@ -1,0 +1,12 @@
+.btn{
+    background-color: #46A44B;
+    color: white;
+    border: none;
+    width: 40%;
+
+}
+.btn-outline{
+    background-color:#FE9D10;
+    color:white;
+    border: none;
+}
