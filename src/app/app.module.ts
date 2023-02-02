@@ -6,21 +6,24 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MainScreenComponent } from './main-screen/main-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainScreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
- /*    RouterModule.forRoot([
-      { path: '', component: HeaderComponent},
+    RouterModule.forRoot([
+      { path: '', component: MainScreenComponent},
+      { path: '/signIn', component: MainScreenComponent},
 
-    ]), */
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
