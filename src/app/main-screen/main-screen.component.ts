@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { HelperFormService } from '../services/helper-form.service';
 
 @Component({
   selector: 'app-main-screen',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-screen.component.css']
 })
 export class MainScreenComponent {
+
+  constructor(public helperformService: HelperFormService){}
+  
 
 }
