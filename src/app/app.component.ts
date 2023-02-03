@@ -9,5 +9,7 @@ import { HelperFormService } from './services/helper-form.service';
 export class AppComponent {
   title = 'Naapurillisuus';
 
-  constructor(public helperformService: HelperFormService){}
+  constructor(
+    public helperformService: HelperFormService,
+    ){}
 }

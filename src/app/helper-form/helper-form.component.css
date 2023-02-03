@@ -10,11 +10,7 @@
   padding: 0;
   margin-bottom: 2rem;
 }
-/* .form-control,
-.form-select,
-.text-area{
-  border-color: #46a44b;
-} */
+
 .form-check-input:checked {
   background-color: #46a44b;
   border-color: #46a44b;
