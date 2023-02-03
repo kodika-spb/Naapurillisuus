@@ -8,7 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MainScreenComponent } from './main-screen/main-screen.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HttpClientModule} from '@angular/common/http';
-import { HelperFormComponent } from './helper-form/helper-form.component'
+import { HelperFormComponent } from './helper-form/helper-form.component';
+import { ContactFormComponent } from './contact-form/contact-form.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HelperFormComponent } from './helper-form/helper-form.component'
     FooterComponent,
     MainScreenComponent,
     HelperFormComponent,
-    SignInComponent 
+    SignInComponent,
+    ContactFormComponent 
   ],
   imports: [
     BrowserModule,
