@@ -1,0 +1,348 @@
+<header class="d-flex d-md-block align-items-center title">
+    <ul
+      ngbnav=""
+      class="nav-tabs px-4 px-lg-5 content-tabset justify-content-md-start justify-content-end nav"
+      role="tablist"
+    >
+      <li class="nav-item">
+        <a
+          href="#"
+          ngbnavlink=""
+          id="ngb-nav-188"
+          role="tab"
+          aria-controls="ngb-nav-188-panel"
+          aria-selected="true"
+          aria-disabled="false"
+          class="nav-link active"
+        >
+          Task List
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          href="#"
+          ngbnavlink=""
+          id="ngb-nav-189"
+          role="tab"
+          aria-selected="false"
+          aria-disabled="false"
+          class="nav-link"
+        >
+          Your tasks
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          href="#"
+          ngbnavlink=""
+          id="ngb-nav-190"
+          role="tab"
+          aria-selected="false"
+          aria-disabled="false"
+          class="nav-link"
+        >
+          Done
+        </a>
+      </li>
+    </ul>
+  </header>
+  <main class="task_list">
+    <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+      <ngb-panel id="custom-panel-1">
+        <ng-template ngbPanelHeader let-opened="opened">
+          <button ngbPanelToggle class="accordion-button urgently">
+            <span><b> Urgently</b> &nbsp;04/10/2023</span>
+          </button>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <article class="accordion-body">
+            <strong>Walking with pets.</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-warning btn-sm px-4 opacity-75">
+                Send a message
+              </button>
+  
+              <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                I take
+              </button>
+            </div>
+          </article>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelHeader>
+          <button ngbPanelToggle class="accordion-button urgently">
+            <span><b> Urgently</b> &nbsp;04/10/2023</span>
+          </button>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div class="accordion-body">
+            <strong>Need help with PC</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-warning btn-sm px-4 opacity-75">
+                Send a message
+              </button>
+  
+              <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                I take
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelHeader let-opened="opened">
+          <button ngbPanelToggle class="accordion-button pets">
+            <span> 🐾 <b> Walk with pets</b>&nbsp;05/10/2023</span>
+          </button>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div class="accordion-body">
+            <strong>Could ypu plese to take a walk my dog</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-warning btn-sm px-4 opacity-75">
+                Send a message
+              </button>
+  
+              <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                I take
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel [disabled]="disabled" [cardClass]="disabled ? 'disabled' : ''">
+        <ng-template ngbPanelHeader let-opened="opened">
+          <button ngbPanelToggle class="accordion-button shopping">
+            <span>🛒 <b> Shopping</b> &nbsp;04/10/2023</span>
+          </button>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div class="accordion-body">
+            <strong>I need some food</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-warning btn-sm px-4 opacity-75">
+                Send a message
+              </button>
+  
+              <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                I take
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+    
+    </ngb-accordion>
+    <!--   <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button urgently"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Urgently
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>Walking with pets.</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. 
+            <code>read more</code>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed shopping"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            <span>🛒 <b> Shopping</b></span>
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or overriding
+            our default variables. It's also worth noting that just about any HTML
+            can go within the <code>.accordion-body</code>, though the transition
+            does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed pets"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            <span> 🐾 <b> Walk with pets</b></span>
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is hidden
+            by default, until the collapse plugin adds the appropriate classes
+            that we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions. You
+            can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the <code>.accordion-body</code>, though the transition does
+            limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button urgently"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Urgently
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is shown
+            by default, until the collapse plugin adds the appropriate classes
+            that we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions. You
+            can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the <code>.accordion-body</code>, though the transition does
+            limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed shopping"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            <span>🛒 <b> Shopping</b></span>
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or overriding
+            our default variables. It's also worth noting that just about any HTML
+            can go within the <code>.accordion-body</code>, though the transition
+            does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed pets"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            <span> 🐾 <b> Walk with pets</b></span>
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is hidden
+            by default, until the collapse plugin adds the appropriate classes
+            that we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions. You
+            can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the <code>.accordion-body</code>, though the transition does
+            limit overflow.
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </main>
+  
