@@ -1,0 +1,25 @@
+
+.task_list{
+    margin: 2rem;
+    padding: 0;
+}
+.urgently{
+    color: black;
+    background-color: #F8D7D9;
+}
+.shopping{
+    color: black;
+    background-color: #D1E6DD;
+}
+.pets{
+    color: black;
+    background-color: #FFF2CD;
+}
+.accordion-button{
+    padding: 1.8rem;
+}
+@media only screen and (max-width: 425px) {
+    .task_list{
+        margin: .5em;
+    }
+  }

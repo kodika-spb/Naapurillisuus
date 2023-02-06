@@ -8,6 +8,8 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./contact-form.component.css'],
 })
 export class ContactFormComponent {
+
+
   form = new FormGroup({
     title: new FormControl<string>('',[
       Validators.required,

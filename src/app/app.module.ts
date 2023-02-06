@@ -9,7 +9,8 @@ import { MainScreenComponent } from './main-screen/main-screen.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HttpClientModule} from '@angular/common/http';
 import { HelperFormComponent } from './helper-form/helper-form.component';
-import { ContactFormComponent } from './contact-form/contact-form.component'
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { HelperDashboardComponent } from './helper-dashboard/helper-dashboard.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component'
     MainScreenComponent,
     HelperFormComponent,
     SignInComponent,
-    ContactFormComponent 
+    ContactFormComponent,
+    HelperDashboardComponent 
   ],
   imports: [
     BrowserModule,
