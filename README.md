@@ -30,9 +30,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Работа с git
 
-Пушим все в ветку develop !  /git push origin develop/
+Пушим все в ветку develop !  /git push /
+Заходим в github  свой кабинет и делаем пул реквест в develop  и мержем его.
 
-Забираем изменения тоже оттуда же , из ветки develop забираем изменения /git pull/
+Забираем изменения из ветки develop /git pull origin develop/
 
 Затем переходим на нашу ветку разработки. Теперь для синхронизации с веткой develop 
 /git merge develop/

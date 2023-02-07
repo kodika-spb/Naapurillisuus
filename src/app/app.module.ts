@@ -10,7 +10,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HttpClientModule} from '@angular/common/http';
 import { HelperFormComponent } from './helper-form/helper-form.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { HelperDashboardComponent } from './helper-dashboard/helper-dashboard.component'
+import { HelperDashboardComponent } from './helper-dashboard/helper-dashboard.component';
+import { MyTasksComponent } from './my-tasks/my-tasks.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HelperDashboardComponent } from './helper-dashboard/helper-dashboard.co
     HelperFormComponent,
     SignInComponent,
     ContactFormComponent,
-    HelperDashboardComponent 
+    HelperDashboardComponent,
+    MyTasksComponent 
   ],
   imports: [
     BrowserModule,

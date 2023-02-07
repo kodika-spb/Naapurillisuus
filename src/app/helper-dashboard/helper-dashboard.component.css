@@ -1,5 +1,10 @@
+.container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1240px;
+  }
 
-.task_list{
+.task_list, .my_tasks, .done{
     margin: 2rem;
     padding: 0;
 }
@@ -15,11 +20,24 @@
     color: black;
     background-color: #FFF2CD;
 }
+.disabled{
+    color: black;
+    background-color: #dddddd;
+}
 .accordion-button{
     padding: 1.8rem;
+}
+.nav{
+    margin: 2rem;
+}
+.nav-link{
+    color: #46a44b;
 }
 @media only screen and (max-width: 425px) {
     .task_list{
         margin: .5em;
+    }
+    .nav{
+        margin: 0.5em;
     }
   }
