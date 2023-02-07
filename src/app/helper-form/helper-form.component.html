@@ -26,14 +26,22 @@
           required=""
         />
       </div>
-      <div class="col-12">
-        <label for="lastName" class="form-label">Social security number</label>
+      <div class="col-sm-6">
+        <label for="floatingInput" class="form-label">Email address</label>
         <input
-          type="text"
+          type="email"
           class="form-control"
-          id="username"
-          placeholder="XXXXXX-XXXX"
-          required=""
+          id="email"
+          placeholder="name@example.com"
+        />
+      </div>
+      <div class="col-sm-6">
+        <label for="floatingPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
         />
       </div>
     </div>
@@ -109,6 +117,8 @@
       <label for="text-area" class="form-label">Tell about you(optional)</label>
       <input type="text-area" class="text-area" />
     </div>
-    <a [routerLink]="['','helper-dashboard']" class="w-100 btn btn-lg">Join us</a>
+    <a [routerLink]="['', 'helper-dashboard']" class="w-100 btn btn-lg"
+      >Join us</a
+    >
   </form>
 </section>

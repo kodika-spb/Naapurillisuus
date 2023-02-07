@@ -34,3 +34,9 @@
   height: 100px;
 }
 
+@media only screen and (max-width: 425px) {
+  .form {
+    width: 90%;
+ 
+  }
+}
