@@ -26,3 +26,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # Naapurillisuus
+
+
+# Работа с git
+
+Пушим все в ветку develop !  /git push /
+Заходим в github  свой кабинет и делаем пул реквест в develop  и мержем его.
+
+Забираем изменения из ветки develop /git pull origin develop/
+
+Затем переходим на нашу ветку разработки. Теперь для синхронизации с веткой develop 
+/git merge develop/
+

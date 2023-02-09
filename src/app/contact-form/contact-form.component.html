@@ -1,0 +1,45 @@
+<form class="container">
+  <h1 class="h3 mb-3 fw-normal">How can we help you?</h1>
+  <div class="col-md-6 mb-3">
+    <label for="country" class="form-label mb-3"
+      >Enter the type of problem.</label
+    >
+    <select class="form-select" required="">
+      <option value="">Choose...</option>
+      <option>Can't make an order</option>
+      <option>Can't make an order by phone</option>
+      <option>Not satisfied with help</option>
+      <option>Рaving problems with a volunteer</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-floating mb-3">
+    <textarea rows="6" type="text" class="text-area"> </textarea>
+    <label for="floatingInput">Enter your question, please.</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="email"
+      class="form-control"
+      id="floatingInput"
+      placeholder="name@example.com"
+    />
+    <label for="floatingInput">Email address</label>
+  </div>
+  <p>or</p>
+  <div class="form-floating mb-3">
+    <input
+      type="number"
+      class="form-control"
+      placeholder="000-000-00-00"
+    />
+    <label for="floatingPassword">Enter your number</label>
+  </div>
+  <button
+    class="w-100 btn btn-lg btn-contact mb-3"
+    type="submit"
+    [routerLink]="['']"
+  >
+    Send a message
+  </button>
+</form>
