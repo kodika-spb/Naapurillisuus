@@ -12,7 +12,8 @@ body{
     border-bottom: 1px solid #ff9800;
 }
 .logo img {
-  width: 35%;
+  width: 40%;
+  margin: .5em;
 }
 .menu{
     display: flex;
@@ -22,23 +23,22 @@ body{
   color:white;
   background-color:#ff9800;
   border: #ff9800;
+  margin-right: 1rem;
+  padding: 0.5em 1.4rem;
 }
 .btn :hover {
   color: #ff9800;
   background-color:white;
 
 }
+@media only screen and (max-width: 768px) {
+  .logo img {
+    width: 55%;
+  }
+}
 @media only screen and (max-width: 425px) {
-    .logo{
-        margin: 0;
-        width: 50%;
-      }
       .logo img {
         width: 35%;
+        margin-top: 1rem;
       }
-      .menu{
-          width: 50%;
-          display: flex;
-          align-items: center;
-      }
-  }
+  } 
