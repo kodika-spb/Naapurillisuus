@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'helper-form', component: HelperFormComponent },
   { path: 'contact-form', component: ContactFormComponent },
   { path: 'client-form', component: ClientFormComponent},
-  { path: 'client-tasks', component: ClientTasksComponent}
+  { path: 'client-tasks', component: ClientTasksComponent},
   { path: 'helper-dashboard', component: HelperDashboardComponent },
   { path: 'my-tasks', component: MyTasksComponent},
 ];
