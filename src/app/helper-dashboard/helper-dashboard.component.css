@@ -34,7 +34,7 @@
     color: #46a44b;
 }
 @media only screen and (max-width: 425px) {
-    .task_list{
+    .task_list , .done, .my_tasks{
         margin: .5em;
     }
     .nav{
