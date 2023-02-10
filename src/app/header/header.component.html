@@ -1,17 +1,19 @@
-<section class="container">
-  <header
-    class="d-flex align-items-center justify-content-between  justify-content-md-between mb-4 border-bottom"
-  >
-    <a
-      [routerLink]="['']"
-      class="logo d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
-    >
-      <img [src]="imgUrl" alt="" />
-    </a>
-
-    <article class="col-md-3 text-end">
      <!--  <button type="button" class="btn  me-2">Login</button> -->
-      <button [routerLink]="['sign-in']" class="btn">Login</button>
-    </article>
-  </header>
-</section>
+
+
+     <section class="container">
+      <header
+        class="d-flex align-items-center justify-content-between justify-content-md-between border-bottom mb-4"
+      >
+        <a
+          [routerLink]="['']"
+          class="logo col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+        >
+          <img [src]="imgUrl" alt="" />
+        </a>
+    
+        <article class="sign_in_main">
+          <button [routerLink]="['sign-in']" class="btn">Sign in</button>
+        </article>
+      </header>
+    </section>
