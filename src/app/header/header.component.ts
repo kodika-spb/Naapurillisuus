@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   /*   imgUrl ='./assets/Logo_naapuri.png'; */
-  imgUrl = './assets/KotiNapu2.png';
+  imgUrl = './assets/logo2.png';
 }
