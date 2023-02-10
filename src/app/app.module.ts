@@ -10,7 +10,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HttpClientModule} from '@angular/common/http';
 import { HelperFormComponent } from './helper-form/helper-form.component';
 import { HelperDashboardComponent } from './helper-dashboard/helper-dashboard.component';
-import { MyTasksComponent } from './my-tasks/my-tasks.component'
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientTasksComponent } from './client-tasks/client-tasks.component'
@@ -25,7 +24,6 @@ import { ClientTasksComponent } from './client-tasks/client-tasks.component'
     SignInComponent,
     ContactFormComponent,
     HelperDashboardComponent,
-    MyTasksComponent, 
     ContactFormComponent,
     ClientFormComponent,
     ClientTasksComponent 

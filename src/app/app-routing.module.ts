@@ -7,7 +7,6 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientTasksComponent } from './client-tasks/client-tasks.component';
 import { HelperDashboardComponent } from './helper-dashboard/helper-dashboard.component';
-import { MyTasksComponent } from './my-tasks/my-tasks.component';
 
 const routes: Routes = [
   { path: '', component: MainScreenComponent },
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'client-form', component: ClientFormComponent},
   { path: 'client-tasks', component: ClientTasksComponent},
   { path: 'helper-dashboard', component: HelperDashboardComponent },
-  { path: 'my-tasks', component: MyTasksComponent},
 ];
 
 @NgModule({
