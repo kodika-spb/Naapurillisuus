@@ -28,7 +28,7 @@
     color: #6a6a6a;
     padding: 1rem;
 }
-.accordion-item{
+.accordion-item, .accordion-button.collapsed{
     color: black;
     background-color: #dddddd;
 }

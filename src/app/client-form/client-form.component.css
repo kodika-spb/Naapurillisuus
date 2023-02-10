@@ -1,8 +1,8 @@
-.form_header_text{
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #ff9800;
+.form_header_text {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--pink);
 }
 .form {
   width: 50%;
@@ -12,8 +12,8 @@
 }
 
 .btn {
-  background-color: #ff9800;
-  border: #ff9800;
+  background-color: var(--pink);
+  border: var(--pink);
   color: white;
   margin-top: 2rem;
 }
@@ -27,10 +27,8 @@
   height: 100px;
 }
 
-@media only screen and (max-width: 425px) 
-{
-.form
-{
+@media only screen and (max-width: 425px) {
+  .form {
     width: 90%;
-}
+  }
 }

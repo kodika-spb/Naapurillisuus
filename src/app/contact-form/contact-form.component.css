@@ -13,6 +13,6 @@
     width: 100%;
 }
 .btn-contact{
-    background-color: #FF9800;
+    background-color: var(--orahge);
     color: white;
 }

@@ -5,9 +5,12 @@
   width: 40%;
 }
 .btn-outline {
-  background-color: #fe9d10;
+  background-color: #FFA1A1;
   color: white;
   border: none;
+}
+.text{
+  color: var(--brown);
 }
 
 @media only screen and (max-width: 425px) {

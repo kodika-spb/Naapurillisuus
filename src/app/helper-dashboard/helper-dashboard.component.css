@@ -1,43 +1,47 @@
 .container {
-    margin: 0 auto;
-    padding: 0;
-    max-width: 1240px;
-  }
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1240px;
+}
 
-.task_list, .my_tasks, .done{
-    margin: 2rem;
-    padding: 0;
+.task_list,
+.my_tasks,
+.done {
+  margin: 2rem;
+  padding: 0;
 }
-.urgently{
-    color: black;
-    background-color: #F8D7D9;
+.urgently {
+  color: white;
+  background-color: #f95656e1;
 }
-.shopping{
-    color: black;
-    background-color: #D1E6DD;
+.shopping {
+  color: var(--brown);
+  background-color: #95cd41;
 }
-.pets{
-    color: black;
-    background-color: #FFF2CD;
+.pets {
+  color: var(--brown);
+  background-color: #f6d860;
 }
-.disabled{
-    color: black;
-    background-color: #dddddd;
+.disabled {
+  color: var(--brown);
+  background-color: #dddddd;
 }
-.accordion-button{
-    padding: 1.8rem;
+.accordion-button {
+  padding: 1.8rem;
 }
-.nav{
-    margin: 2rem;
+.nav {
+  margin: 2rem;
 }
-.nav-link{
-    color: #46a44b;
+.nav-link {
+  color: #46a44b;
 }
 @media only screen and (max-width: 425px) {
-    .task_list , .done, .my_tasks{
-        margin: .5em;
-    }
-    .nav{
-        margin: 0.5em;
-    }
+  .task_list,
+  .done,
+  .my_tasks {
+    margin: 0.5em;
   }
+  .nav {
+    margin: 0.5em;
+  }
+}

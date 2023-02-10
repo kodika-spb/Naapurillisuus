@@ -9,7 +9,7 @@ body {
   max-width: 1240px;
 }
 .header {
-  border-bottom: 1px solid #ff9800;
+  border-bottom: 1px solid var(--orahge);
 }
 .logo img {
   width: 25%;
@@ -21,14 +21,14 @@ body {
 }
 .btn {
   color: white;
-  background-color: #ff9800;
-  border: #ff9800;
+  background-color: var(--orahge);
+  border: var(--orahge);
   margin-right: 1rem;
   padding: 0.5em 2rem;
   font-size: 1.2rem;
 }
 .btn :hover {
-  color: #ff9800;
+  color: var(--orahge);
   background-color: white;
 }
 @media only screen and (max-width: 768px) {
