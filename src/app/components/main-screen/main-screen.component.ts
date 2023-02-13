@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { HelperFormService } from '../services/helper-form.service';
+import { HelperFormService } from '../../services/helper-form.service';
 
 @Component({
   selector: 'app-main-screen',
@@ -9,6 +9,8 @@ import { HelperFormService } from '../services/helper-form.service';
 export class MainScreenComponent {
 
   constructor(public helperformService: HelperFormService){}
-  
+  imgUrl1 ='./assets/face.png';
+  imgUrl2= './assets/messages.png';
+  imgUrl3 = './assets/hands.png';
 
 }

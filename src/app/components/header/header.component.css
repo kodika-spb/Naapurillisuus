@@ -9,7 +9,7 @@ body {
   max-width: 1240px;
 }
 .header {
-  border-bottom: 1px solid var(--orahge);
+  border-bottom: 1px solid var(--main-color);
 }
 .logo img {
   width: 25%;
@@ -21,23 +21,21 @@ body {
 }
 .btn {
   color: white;
-  background-color: var(--orahge);
-  border: var(--orahge);
+  background-color: var(--main-color);
+  border: var(--main-color);
   margin-right: 1rem;
   padding: 0.5em 2rem;
   font-size: 1.2rem;
 }
 .btn :hover {
-  color: var(--orahge);
+  color: var(--main-color);
   background-color: white;
 }
 @media only screen and (max-width: 768px) {
   .logo img {
     width: 35%;
   }
-  .sign_in_main{
-    width: 50%;
-  }
+
   .btn {
     padding: 0.5em 1.4rem;
     font-size: 1rem;
@@ -47,12 +45,24 @@ body {
   .logo img {
     width: 25%;
   }
-  .sign_in_main{
-    width: 50%;
+  .sign_in_main {
+    width: 46%;
   }
   .btn {
-    padding: 0.5em 1rem;
+    padding: 0.8em 1.2rem;
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .logo img {
+    width: 25%;
+  }
+  .sign_in_main {
+    width: 60%;
+  }
+  .btn {
+    padding: 0.5em;
     margin: 0;
   }
 }

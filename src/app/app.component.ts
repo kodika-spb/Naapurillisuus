@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HelperFormService } from './services/helper-form.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +9,5 @@ export class AppComponent {
   title = 'Naapurillisuus';
 
   constructor(
-    public helperformService: HelperFormService,
     ){}
 }

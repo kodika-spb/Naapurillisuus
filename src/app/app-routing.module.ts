@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { MainScreenComponent } from './main-screen/main-screen.component';
-import { HelperFormComponent } from './helper-form/helper-form.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { ClientFormComponent } from './client-form/client-form.component';
-import { ClientTasksComponent } from './client-tasks/client-tasks.component';
-import { HelperDashboardComponent } from './helper-dashboard/helper-dashboard.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { MainScreenComponent } from './components/main-screen/main-screen.component';
+import { HelperFormComponent } from './components/helper-form/helper-form.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ClientFormComponent } from './components/client-form/client-form.component';
+import { ClientTasksComponent } from './components/client-tasks/client-tasks.component';
+import { HelperDashboardComponent } from './components/helper-dashboard/helper-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: MainScreenComponent },

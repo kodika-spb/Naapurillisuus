@@ -22,11 +22,11 @@
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="d-flex justify-content-end">
-                  <button class="btn btn-warning btn-sm px-4 opacity-75">
+                <!--   <button class="btn btn-send btn-sm px-4 opacity-75">
                     Send a message
-                  </button>
+                  </button> -->
 
-                  <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                  <button class="btn btn-take btn-lg">
                     I take
                   </button>
                 </div>
@@ -49,11 +49,11 @@
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="d-flex justify-content-end">
-                  <button class="btn btn-warning btn-sm px-4 opacity-75">
+                <!--   <button class="btn btn-warning btn-sm px-4 opacity-55">
                     Send a message
-                  </button>
+                  </button> -->
 
-                  <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                  <button class="btn btn-take btn-lg">
                     I take
                   </button>
                 </div>
@@ -63,7 +63,7 @@
           <ngb-panel>
             <ng-template ngbPanelHeader let-opened="opened">
               <button ngbPanelToggle class="accordion-button pets">
-                <span> 🐾 <b> Walk with pets</b>&nbsp;05/10/2023</span>
+                <span><b> Walk with pets</b>&nbsp;05/10/2023</span>
               </button>
             </ng-template>
             <ng-template ngbPanelContent>
@@ -76,11 +76,11 @@
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="d-flex justify-content-end">
-                  <button class="btn btn-warning btn-sm px-4 opacity-75">
+                <!--   <button class="btn btn-warning btn-sm px-4 opacity-75">
                     Send a message
-                  </button>
+                  </button> -->
 
-                  <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                  <button class="btn btn-take btn-lg">
                     I take
                   </button>
                 </div>
@@ -91,33 +91,44 @@
             [disabled]="disabled"
             [cardClass]="disabled ? 'disabled' : ''"
           >
-            <ng-template ngbPanelHeader let-opened="opened">
-              <button ngbPanelToggle class="accordion-button shopping">
-                <span>🛒 <b> Shopping</b> &nbsp;04/10/2023</span>
-              </button>
-            </ng-template>
-            <ng-template ngbPanelContent>
-              <div class="accordion-body">
-                <strong>I need some food</strong>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <div class="d-flex justify-content-end">
-                  <button class="btn btn-warning btn-sm px-4 opacity-75">
-                    Send a message
-                  </button>
+            
+          <ng-template ngbPanelHeader let-opened="opened">
+            <button ngbPanelToggle class="accordion-button shopping">
+              <span><b> Shopping</b> &nbsp;04/10/2023</span>
+            </button>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="accordion-body">
+              <strong>I need some food</strong>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <div class="d-flex justify-content-end">
+              <!--   <button class="btn btn-warning btn-sm px-4 opacity-75">
+                  Send a message
+                </button> -->
 
-                  <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
-                    I take
-                  </button>
-                </div>
+                <button class="btn btn-take btn-lg">
+                  I take
+                </button>
               </div>
-            </ng-template>
+            </div>
+          </ng-template>
+            
           </ngb-panel>
-
+          <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+        <ng-template ngbPanelHeader let-opened="opened">
+          <button ngbPanelToggle class="accordion-button other">
+            <span><b> Other</b> &nbsp;04/10/2023</span>
+          </button>
+        </ng-template>
+        </ngb-panel>
         </ngb-accordion>
       </section>
     </ng-template>
@@ -142,13 +153,11 @@
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
-                  <div class="d-flex justify-content-end">
-                    <button class="btn btn-warning btn-sm px-4 opacity-75">
-                      Send a message
-                    </button>
-  
-                    <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
-                      I take
+                  <div class="d-flex flex-column col-12">
+                    <p class="fs-6 fw-semibold">Asking for details:</p>
+                    <textarea name="" id="" rows="3"></textarea>
+                    <button class="btn btn-send btn-lg mt-4 align-self-end">
+                     send a message
                     </button>
                   </div>
                 </article>

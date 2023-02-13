@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HelperFormService } from '../services/helper-form.service';
+import { HelperFormService } from '../../services/helper-form.service';
 
 @Component({
   selector: 'app-helper-form',
