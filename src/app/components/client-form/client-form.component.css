@@ -1,0 +1,36 @@
+.form_header_text {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--brown);
+}
+.form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  background-color: var(--main-client);
+  border: var(--main-client);
+  color: white;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.btn:hover {
+  background-color: white;
+  border: 1px solid var(--main-client);
+  color: var(--main-client);
+}
+.text-area {
+  width: 100%;
+  height: 100px;
+}
+
+@media only screen and (max-width: 425px) {
+  .form {
+    width: 90%;
+  }
+}

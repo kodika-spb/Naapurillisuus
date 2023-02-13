@@ -1,0 +1,43 @@
+.form_header_text {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--brown);
+}
+.form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+label{
+  font-size: 1.4rem;
+}
+.form-check-input:checked {
+  background-color: var(--main-volunteer2);
+  border-color: var(--main-volunteer2);
+}
+
+.btn {
+  background-color: var(--main-volunteer2);
+  border: var(--main-volunteer2);
+  color: white;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.btn:hover {
+  background-color: white;
+  border: 1px solid var(--main-volunteer2);
+  color: var(--main-volunteer2);
+}
+.text-area {
+  width: 100%;
+  height: 100px;
+}
+
+@media only screen and (max-width: 425px) {
+  .form {
+    width: 90%;
+  }
+}

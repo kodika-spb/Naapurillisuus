@@ -1,0 +1,15 @@
+.container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1240px;
+  }
+
+.footer {
+  padding: 2.5rem 0;
+  color: #727272;
+  text-align: center;
+  border-top: 0.05rem solid #e5e5e5;
+}
+.contact_us{
+    color: var(--main-color);
+}

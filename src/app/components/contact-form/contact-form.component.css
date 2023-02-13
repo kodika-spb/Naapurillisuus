@@ -1,0 +1,18 @@
+.container {
+ width: 90%;
+}
+.contact_form{
+   width: 50%;
+   position: absolute;
+   top: 10%;
+   padding: 1rem;
+   background: white;
+}
+.text-area{
+    border: 1px solid #ced4da;
+    width: 100%;
+}
+.btn-contact{
+    background-color: var(--main-color);
+    color: white;
+}

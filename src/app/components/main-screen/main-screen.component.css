@@ -1,0 +1,67 @@
+.header-text {
+  color: var(--brown);
+  margin-bottom: 2rem;
+}
+.text {
+  font-size: 1.3rem;
+}
+.volunteer {
+  background-color: var(--main-volunteer2);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  width: 30%;
+}
+.client {
+  background-color: var(--main-client);
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  width: 30%;
+}
+.btns {
+  margin-top: 5rem;
+}
+.icons {
+  width: 25%;
+  text-align: center;
+}
+.steps {
+
+  margin-bottom: 5rem;
+}
+.steps-text {
+  font-size: 1.2rem;
+}
+.bi-exclamation-circle,
+.bi-chat-dots,
+.bi-hand-thumbs-up {
+  color: var(--main-color);
+  font-size: 3rem;
+}
+.bi-exclamation-circle:hover,
+.bi-chat-dots:hover,
+.bi-hand-thumbs-up:hover {
+  color: var(--brown);
+  font-size: 3rem;
+}
+
+
+
+@media only screen and (min-width: 1440px) {
+  .main {
+    height: 400px;
+  }
+  .main-block {
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .btn {
+    width: 100%;
+  }
+  .icons {
+    width: 90%;
+    text-align: center;
+  }
+}

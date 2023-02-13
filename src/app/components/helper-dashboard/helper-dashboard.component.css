@@ -1,0 +1,94 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1240px;
+}
+
+.task_list,
+.my_tasks,
+.done {
+  margin: 2rem;
+  padding: 0;
+}
+.urgently {
+  color: var(--brown);
+  background-color: var(--emergency);
+}
+.shopping {
+  color: var(--brown);
+  background-color: var(--shopping);
+}
+.pets {
+  color: var(--brown);
+  background-color: var(--pets);
+}
+.other {
+  color: var(--brown);
+  background-color: var(--others);
+}
+.disabled {
+  color: var(--brown);
+  background-color: #dddddd;
+}
+.btn-send {
+  font-size: 1rem;
+  color: var(--brown);
+  background-color: #ffd453;
+  width: 20%;
+}
+.btn-take {
+  color: white;
+  background-color: #1b9c39;
+  opacity: 85%;
+  padding: 0.3em 1.6rem;
+}
+/* .btn-send:hover{
+  color: var(--brown);
+  background-color: #ffd453;;
+} */
+.btn-take:hover {
+  color: white;
+  background-color: #24aa6b;
+}
+.accordion-button {
+  padding: 1.8rem;
+}
+.nav {
+  margin: 2rem;
+}
+.nav-link {
+  color: var(--main-color);
+  font-size: 1.2rem;
+}
+@media only screen and (max-width: 425px) {
+  .task_list,
+  .done,
+  .my_tasks {
+    margin: 0.5em;
+  }
+  .nav {
+    margin: 0.5em;
+  }
+  .btn-send {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .task_list,
+  .done,
+  .my_tasks {
+    margin: 0.5em;
+  }
+  .nav {
+    margin: 0.5em;
+  }
+  .btn-send,
+  .btn-take {
+    font-size: 0.8em;
+  }
+  .btn-send {
+    width: 80%;
+    margin: auto;
+  }
+}
