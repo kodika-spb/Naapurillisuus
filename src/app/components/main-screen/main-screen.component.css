@@ -1,3 +1,6 @@
+.container{
+  max-width: 100%;
+}
 .header-text {
   color: var(--brown);
   margin-bottom: 2rem;
@@ -56,7 +59,50 @@
     margin-top: 100px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    width: 50%;
+  }
+}
 @media only screen and (max-width: 425px) {
+  .btn {
+    width: 100%;
+  }
+  .icons {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    max-width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .icons {
+    width: 90%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container{
+    max-width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .icons {
+    width: 90%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .container{
+    max-width: 100%;
+  }
   .btn {
     width: 100%;
   }
