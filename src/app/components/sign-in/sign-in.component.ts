@@ -23,8 +23,8 @@ export class SignInComponent {
     });
   }
   login(){
-    if(this.loginForm.invalid)
-      return;
+    // if(this.loginForm.invalid)
+    //   return;
 
       this.authService.loginUser(this.loginForm.value.email, this.loginForm.value.password).then((result) => {
         if(result == null){
