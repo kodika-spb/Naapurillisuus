@@ -2,7 +2,7 @@
   <h3 class="form_header_text">
     Please fillout form below for join us as a volunteer
   </h3>
-  <form class="needs-validation" novalidate="">
+  <form class="needs-validation" novalidate="" [formGroup]="signupForm" (ngSubmit)="signup()">
     <div class="row g-3">
       <div class="col-sm-6">
         <label for="firstName" class="form-label">First name</label>
@@ -13,6 +13,7 @@
           placeholder=""
           value=""
           required=""
+          formControlName="firstName"
         />
       </div>
       <div class="col-sm-6">
@@ -24,6 +25,7 @@
           placeholder=""
           value=""
           required=""
+          formControlName="lastName"
         />
       </div>
       <div class="col-sm-6">
@@ -33,6 +35,7 @@
           class="form-control"
           id="email"
           placeholder="name@example.com"
+          formControlName="email"
         />
       </div>
       <div class="col-sm-6">
@@ -42,6 +45,7 @@
           class="form-control"
           id="password"
           placeholder="Password"
+          formControlName="password"
         />
       </div>
     </div>
@@ -56,6 +60,10 @@
         required=""
       />
       <div class="invalid-feedback">Please enter your shipping address.</div>
+    </div>
+
+    <div *ngIf="firebaseErrorMessage != ''" class="error">
+      <span>{{ firebaseErrorMessage }}</span>
     </div>
 
     <div class="col-md-5">
@@ -117,8 +125,6 @@
       <label for="text-area" class="form-label">Tell about you(optional)</label>
       <input type="text-area" class="text-area" />
     </div>
-    <a [routerLink]="['', 'helper-dashboard']" class="w-100 btn btn-lg"
-      >Join us</a
-    >
+    <button type="submit" routerLink="/helper-deshboard" class="w-100 btn btn-lg">Join Us</button>
   </form>
 </section>

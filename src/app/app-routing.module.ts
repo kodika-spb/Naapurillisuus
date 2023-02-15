@@ -8,14 +8,16 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import { ClientTasksComponent } from './components/client-tasks/client-tasks.component';
 import { HelperDashboardComponent } from './components/helper-dashboard/helper-dashboard.component';
 
+import { AuthGuard } from './services/auth.guard';
+
 const routes: Routes = [
   { path: '', component: MainScreenComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'helper-form', component: HelperFormComponent },
   { path: 'contact-form', component: ContactFormComponent },
   { path: 'client-form', component: ClientFormComponent},
-  { path: 'client-tasks', component: ClientTasksComponent},
-  { path: 'helper-dashboard', component: HelperDashboardComponent },
+  { path: 'client-tasks', component: ClientTasksComponent, canActivate: [AuthGuard]},
+  { path: 'helper-dashboard', component: HelperDashboardComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-header',
@@ -11,4 +12,9 @@ export class HeaderComponent {
   /*  imgUrl = './assets/logo_violetti.png'; */
   imgUrl = './assets/logo_2.png';
   /*  imgUrl = './assets/third_logo.png'; */
+  constructor (public afAuth: AngularFireAuth){}
+
+  logout(): void{
+    this.afAuth.signOut();
+  }
 }
