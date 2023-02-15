@@ -13,7 +13,9 @@
         </a>
     
         <article class="sign_in_main">
-          <button [routerLink]="['sign-in']" class="btn">Sign in</button>
+          <!-- <button [routerLink]="['sign-in']" class="btn">Sign in</button> -->
+          <button *ngIf="!(afAuth.user | async)" [routerLink]="['sign-in']" class="btn">Login</button>
+          <button *ngIf="(afAuth.user | async)" [routerLink]= "['']" (click)="logout()" class="btn">Logout</button>
         </article>
       </header>
     </section>
