@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./client-form.component.css']
 })
 export class ClientFormComponent {
-
+  
+ /*  constructor(private nameservice: Service.name){} */
 }
