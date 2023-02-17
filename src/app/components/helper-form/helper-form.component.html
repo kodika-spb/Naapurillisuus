@@ -2,7 +2,7 @@
   <h3 class="form_header_text">
     Please fillout form below for join us as a volunteer
   </h3>
-  <form class="needs-validation" novalidate="" [formGroup]="signupForm" (ngSubmit)="signup()">
+  <form class="needs-validation" novalidate="" [formGroup]="signupForm" (ngSubmit)="signUp()">
     <div class="row g-3">
       <div class="col-sm-6">
         <label for="firstName" class="form-label">First name</label>
@@ -37,6 +37,14 @@
           placeholder="name@example.com"
           formControlName="email"
         />
+        <p
+        *ngIf="
+          this.signupForm.get('email')?.invalid &&
+          this.signupForm.get('email')?.touched
+        "
+      >
+        <small class="text-danger">Email is required</small>
+      </p>
       </div>
       <div class="col-sm-6">
         <label for="floatingPassword" class="form-label">Password</label>
@@ -46,7 +54,16 @@
           id="password"
           placeholder="Password"
           formControlName="password"
+          required
         />
+        <p
+        *ngIf="
+          this.signupForm.get('password')?.invalid &&
+          this.signupForm.get('password')?.touched
+        "
+      >
+        <small class="text-danger">Password is required</small>
+      </p>
       </div>
     </div>
     <hr class="my-4" />
@@ -125,6 +142,6 @@
       <label for="text-area" class="form-label">Tell about you(optional)</label>
       <input type="text-area" class="text-area" />
     </div>
-    <button type="submit" routerLink="/helper-deshboard" class="w-100 btn btn-lg">Join Us</button>
+    <button type="submit" class="w-100 btn btn-lg">Join Us</button>
   </form>
 </section>

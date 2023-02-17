@@ -1,12 +1,12 @@
 .container {
   margin: 0 auto;
   padding: 0;
-  max-width: 1240px;
 }
 
 .task_list,
 .my_tasks,
-.done {
+.done,
+.my_account {
   margin: 2rem;
   padding: 0;
 }
@@ -60,6 +60,20 @@
   color: var(--main-color);
   font-size: 1.2rem;
 }
+.card {
+  margin: auto;
+  width: 30%;
+}
+.card-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.btnShow_id {
+  width: 50%;
+  background-color: var( --clients-btns);
+}
 @media only screen and (max-width: 425px) {
   .task_list,
   .done,
@@ -68,6 +82,14 @@
   }
   .nav {
     margin: 0.5em;
+  }
+  .nav-link{
+    font-size: 1rem;
+  }
+  .card-img{
+    width: 380px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
   }
   .btn-send {
     width: 80%;
