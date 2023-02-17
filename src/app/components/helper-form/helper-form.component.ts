@@ -1,46 +1,53 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HelperFormService } from '../../services/helper-form.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-helper-form',
   templateUrl: './helper-form.component.html',
-  styleUrls: ['./helper-form.component.css']
+  styleUrls: ['./helper-form.component.css'],
 })
 export class HelperFormComponent {
-
   form: any;
   signupForm: FormGroup;
   firebaseErrorMessage: string;
 
-  constructor(private afAuth: AngularFireAuth, private authService: AuthService, private router: Router, public helperformService: HelperFormService){
+  constructor(
+    private afAuth: AngularFireAuth,
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
     this.firebaseErrorMessage = '';
-  }
-
-  ngOnInit():void{
     this.signupForm = new FormGroup({
-      'firstName': new FormControl ('', Validators.required),
-      'lastName': new FormControl ('', Validators.required),
-      'email': new FormControl ('', [Validators.required, Validators.email]),
-      'password': new FormControl ('', Validators.required)
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/),
+      ]),
     });
+   /*  if (this.authService.isLoggedIn()) {
+      this.router.navigate(['helper-dashboard']);
+    } */
   }
 
-  signup(){
-    if(this.signupForm.invalid)
-      return;
+  signUp() {
+    if (this.signupForm.invalid) return;
 
-      this.authService.signupUser(this.signupForm.value).then((result) => {
-        if(result == null)
-          this.router.navigate(['/helper-dashboard']);
-        else if(result.isValid = false)
-          this.firebaseErrorMessage = result.message;
-      }).catch(() => {
-
-      });
+    this.authService
+      .signupUser(this.signupForm.value)
+      .then((result) => {
+        if (result == null) {
+          this.router.navigate(['helper-dashboard']);
+        }
+        return alert('Ooops..The email address is already in use by another account.')/* throwError(() =>  new Error('Faild login')); */
+      })
+      .catch(() => {});
   }
-
 }

@@ -8,5 +8,7 @@ import { NgIf } from '@angular/common';
   styleUrls: ['./helper-dashboard.component.css'],
 })
 export class HelperDashboardComponent {
+
+  imgUrl = './assets/myAcc4.png';
   disabled = false;
 }
