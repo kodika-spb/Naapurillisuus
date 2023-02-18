@@ -40,7 +40,7 @@ export class AuthService {
       .catch((error) => {
         console.log('Auth Service: signup error', error);
         if (error.code) {
-          return { isValid: false, message: error.message };
+          return (alert('Ooops..The email address is already in use by another account.'));
         }
         return error.message;
       });

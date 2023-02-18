@@ -14,14 +14,18 @@ export class HelperFormComponent {
   form: any;
   signupForm: FormGroup;
   firebaseErrorMessage: string;
+  myAngularxQrCode: string;
+
 
   constructor(
     private afAuth: AngularFireAuth,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    
   ) {}
 
   ngOnInit(): void {
+    this.myAngularxQrCode = 'ItSoluionStuff.com';
     this.firebaseErrorMessage = '';
     this.signupForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
@@ -46,7 +50,7 @@ export class HelperFormComponent {
         if (result == null) {
           this.router.navigate(['helper-dashboard']);
         }
-        return alert('Ooops..The email address is already in use by another account.')/* throwError(() =>  new Error('Faild login')); */
+        return throwError(() =>  new Error('Faild login')); 
       })
       .catch(() => {});
   }

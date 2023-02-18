@@ -60,10 +60,6 @@
   color: var(--main-color);
   font-size: 1.2rem;
 }
-.card {
-  margin: auto;
-  width: 30%;
-}
 .card-img {
   width: 300px;
   height: 300px;
@@ -74,6 +70,13 @@
   width: 50%;
   background-color: var( --clients-btns);
 }
+#qrcode {
+  width:160px;
+  height:160px;
+  margin-top:15px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 425px) {
   .task_list,
   .done,
@@ -94,6 +97,9 @@
   .btn-send {
     width: 80%;
     margin: auto;
+  }
+  .btnShow_id {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 320px) {
