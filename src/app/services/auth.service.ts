@@ -9,7 +9,9 @@ export class AuthService {
 
   userLoggedIn: boolean;
 
-  constructor(private router: Router, private afAuth: AngularFireAuth) { 
+  constructor(private router: Router, private afAuth: AngularFireAuth) {}
+
+  ngOnInit():void{
     this.userLoggedIn = false;
 
     this.afAuth.onAuthStateChanged((user) => {
