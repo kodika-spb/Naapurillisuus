@@ -1,7 +1,8 @@
 export interface UserModel{
-    lastName: string;
-    firstName: string;
-    role: string;
+    uid: string; 
     email: string;
-    password: string;
+    displayName: string;
+    photoURL: string;
+    emailVerified: boolean;
+    role: string;
 }

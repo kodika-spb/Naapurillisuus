@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { UserModel } from '../models/user.model';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +11,20 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   userLoggedIn: boolean;
+  userData: any;
 
-  constructor(private router: Router, private afAuth: AngularFireAuth) {}
+  constructor(private router: Router, private afAuth: AngularFireAuth, public afs: AngularFirestore) {
+    this.afAuth.authState.subscribe((user)=> {
+      if(user) {
+        this.userData = user;
+        localStorage.setItem('user', JSON.stringify(this.userData));
+        JSON.parse(localStorage.getItem('user')!);
+      }else{
+        localStorage.setItem('user', 'null');
+        JSON.parse(localStorage.getItem('user')!)
+      }
+    });
+  }
 
   ngOnInit():void{
     this.userLoggedIn = false;
