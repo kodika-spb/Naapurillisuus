@@ -53,7 +53,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     // provideAuth(() => getAuth()),
     // provideDatabase(() => getDatabase()),
     // provideFirestore(() => getFirestore()),
-    // provideStorage(() => getStorage())
+    // provideStorage(() => getStorage()),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
