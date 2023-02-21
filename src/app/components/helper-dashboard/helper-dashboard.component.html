@@ -7,7 +7,7 @@
           <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1" *ngFor="let task of tasks" >
             <ngb-panel id="custom-panel-1">
               <ng-template ngbPanelHeader let-opened="opened">
-                <button ngbPanelToggle class="accordion-button" [ngClass]="{'shopping':task.class == 'shopping','urgently':task.class == 'urgently','pets':task.class == 'pets','others':task.class == 'others'}">
+                <button ngbPanelToggle class="accordion-button" [ngClass]="{'shopping':task.class == 'shopping','urgently':task.class == 'urgently','pets':task.class == 'pets','other':task.class == 'others'}">
                   <span><b> {{task.category}}</b> &nbsp;{{task.date}}</span>
                 </button>
               </ng-template>
