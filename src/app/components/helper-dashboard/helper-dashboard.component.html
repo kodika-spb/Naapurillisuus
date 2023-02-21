@@ -3,7 +3,7 @@
     <ng-container ngbNavItem>
       <a ngbNavLink>Tasks list</a>
       <ng-template ngbNavContent>
-        <section class="task_list vh-100" ngbnavlink="task_list">
+        <section class="task_list" ngbnavlink="task_list">
           <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1" *ngFor="let task of tasks" >
             <ngb-panel id="custom-panel-1">
               <ng-template ngbPanelHeader let-opened="opened">
