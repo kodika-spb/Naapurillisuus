@@ -49,9 +49,6 @@
 
 
 @media only screen and (min-width: 1440px) {
-  .main {
-    height: 400px;
-  }
   .main-block {
     margin-top: 100px;
   }
