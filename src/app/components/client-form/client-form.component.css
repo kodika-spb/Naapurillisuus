@@ -11,9 +11,7 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-label{
-  font-size: 1.4rem;
-}
+
 .btn {
   background-color: var(--main-client);
   border: var(--main-client);
@@ -23,8 +21,8 @@ label{
 }
 .btn:hover {
   background-color: white;
-  border: 2px solid var(--main-client);
-  color: var(--brown);
+  border: 1px solid var(--main-client);
+  color: var(--main-client);
 }
 .text-area {
   width: 100%;

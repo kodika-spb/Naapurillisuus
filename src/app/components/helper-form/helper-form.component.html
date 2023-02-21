@@ -9,7 +9,7 @@
         <input
           type="text"
           class="form-control"
-          #firstName
+          id="firstName"
           placeholder=""
           value=""
           required=""
@@ -21,7 +21,7 @@
         <input
           type="text"
           class="form-control"
-          #lastName
+          id="lastName"
           placeholder=""
           value=""
           required=""
@@ -33,7 +33,7 @@
         <input
           type="email"
           class="form-control"
-          #email
+          id="email"
           placeholder="name@example.com"
           formControlName="email"
         />
@@ -51,7 +51,7 @@
         <input
           type="password"
           class="form-control"
-          #password
+          id="password"
           placeholder="Password"
           formControlName="password"
           required
@@ -72,7 +72,7 @@
       <input
         type="text"
         class="form-control"
-        #address
+        id="address"
         placeholder=""
         required=""
       />
@@ -84,7 +84,7 @@
     </div>
 
     <div class="col-md-5">
-      <label for="country" class="form-label">City</label>
+      <label for="country" class="form-label">Country</label>
       <select class="form-select" id="country" required="">
         <option value="">Choose...</option>
         <option>Helsinki</option>
@@ -99,7 +99,7 @@
       <input
         type="text"
         class="form-control"
-        #zip
+        id="zip"
         placeholder=""
         required=""
       />
@@ -140,7 +140,7 @@
 
     <div class="col-md-12">
       <label for="text-area" class="form-label">Tell about you(optional)</label>
-      <input type="text-area" class="text-area" #about/>
+      <input type="text-area" class="text-area" />
     </div>
     <button type="submit" class="w-100 btn btn-lg">Join Us</button>
   </form>
