@@ -1,143 +1,52 @@
 <section class="container">
-
-<nav ngbNav #nav="ngbNav" class="nav-tabs">
-  <ng-container ngbNavItem>
-    <a ngbNavLink>Tasks list</a>
-    <ng-template ngbNavContent>
-      <section class="task_list" ngbnavlink="task_list">
-        <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
-          <ngb-panel id="custom-panel-1">
-            <ng-template ngbPanelHeader let-opened="opened">
-              <button ngbPanelToggle class="accordion-button urgently">
-                <span><b> Urgently</b> &nbsp;04/10/2023</span>
-              </button>
-            </ng-template>
-            <ng-template ngbPanelContent>
-              <article class="accordion-body">
-                <strong>Walking with pets.</strong>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <div class="d-flex justify-content-end">
-                <!--   <button class="btn btn-send btn-sm px-4 opacity-75">
-                    Send a message
-                  </button> -->
-
-                  <button class="btn btn-take btn-lg">
-                    I take
-                  </button>
-                </div>
-              </article>
-            </ng-template>
-          </ngb-panel>
-          <ngb-panel>
-            <ng-template ngbPanelHeader>
-              <button ngbPanelToggle class="accordion-button urgently">
-                <span><b> Urgently</b> &nbsp;04/10/2023</span>
-              </button>
-            </ng-template>
-            <ng-template ngbPanelContent>
-              <div class="accordion-body">
-                <strong>Need help with PC</strong>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <div class="d-flex justify-content-end">
-                <!--   <button class="btn btn-warning btn-sm px-4 opacity-55">
-                    Send a message
-                  </button> -->
-
-                  <button class="btn btn-take btn-lg">
-                    I take
-                  </button>
-                </div>
-              </div>
-            </ng-template>
-          </ngb-panel>
-          <ngb-panel>
-            <ng-template ngbPanelHeader let-opened="opened">
-              <button ngbPanelToggle class="accordion-button pets">
-                <span><b> Walk with pets</b>&nbsp;05/10/2023</span>
-              </button>
-            </ng-template>
-            <ng-template ngbPanelContent>
-              <div class="accordion-body">
-                <strong>Could ypu plese to take a walk my dog</strong>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <div class="d-flex justify-content-end">
-                <!--   <button class="btn btn-warning btn-sm px-4 opacity-75">
-                    Send a message
-                  </button> -->
-
-                  <button class="btn btn-take btn-lg">
-                    I take
-                  </button>
-                </div>
-              </div>
-            </ng-template>
-          </ngb-panel>
-          <ngb-panel
-            [disabled]="disabled"
-            [cardClass]="disabled ? 'disabled' : ''"
+<!--   <nav ngbNav #nav="ngbNav" class="nav-tabs">
+    <ng-container ngbNavItem>
+      <a ngbNavLink>Tasks list</a>
+      <ng-template ngbNavContent> -->
+        <section class="task_list" ngbnavlink="task_list">
+          <ngb-accordion
+            #a="ngbAccordion"
+            activeIds="custom-panel-1"
+            *ngFor="let task of tasks"
           >
-            
-          <ng-template ngbPanelHeader let-opened="opened">
-            <button ngbPanelToggle class="accordion-button shopping">
-              <span><b> Shopping</b> &nbsp;04/10/2023</span>
-            </button>
-          </ng-template>
-          <ng-template ngbPanelContent>
-            <div class="accordion-body">
-              <strong>I need some food</strong>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <div class="d-flex justify-content-end">
-              <!--   <button class="btn btn-warning btn-sm px-4 opacity-75">
-                  Send a message
-                </button> -->
-
-                <button class="btn btn-take btn-lg">
-                  I take
+            <ngb-panel id="custom-panel-1">
+              <ng-template ngbPanelHeader let-opened="opened">
+                <button
+                  ngbPanelToggle
+                  class="accordion-button"
+                  [ngClass]="{
+                    shopping: task.class == 'shopping',
+                    urgently: task.class == 'urgently',
+                    pets: task.class == 'pets',
+                    other: task.class == 'others'
+                  }"
+                >
+                  <span
+                    ><b> {{ task.category }}</b> &nbsp;{{ task.date }}</span
+                  >
                 </button>
-              </div>
-            </div>
-          </ng-template>
-            
-          </ngb-panel>
-          <ngb-panel
-          [disabled]="disabled"
-          [cardClass]="disabled ? 'disabled' : ''"
-        >
-        <ng-template ngbPanelHeader let-opened="opened">
-          <button ngbPanelToggle class="accordion-button other">
-            <span><b> Other</b> &nbsp;04/10/2023</span>
-          </button>
-        </ng-template>
-        </ngb-panel>
-        </ngb-accordion>
-      </section>
-    </ng-template>
-  </ng-container>
-  <ng-container ngbNavItem>
-    <a ngbNavLink>My tasks</a>
-    <ng-template ngbNavContent>
-     <section class="my_tasks">
-        <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <article class="accordion-body">
+                  <strong>{{ task.title }}</strong>
+                  <p>
+                    {{ task.description }}
+                  </p>
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-take btn-lg" (click)="addToMyTasks()">I take</button>
+                  </div>
+                </article>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </section>
+   <!--    </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink>My tasks</a>
+      <ng-template ngbNavContent> -->
+        <section class="my_tasks">
+          <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
             <ngb-panel id="custom-panel-1">
               <ng-template ngbPanelHeader let-opened="opened">
                 <button ngbPanelToggle class="accordion-button urgently">
@@ -148,64 +57,127 @@
                 <article class="accordion-body">
                   <strong>Walking with pets.</strong>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
                   <div class="d-flex flex-column col-12">
                     <p class="fs-6 fw-semibold">Asking for details:</p>
                     <textarea name="" id="" rows="3"></textarea>
                     <button class="btn btn-send btn-lg mt-4 align-self-end">
-                     send a message
+                      send a message
                     </button>
                   </div>
                 </article>
               </ng-template>
             </ngb-panel>
           </ngb-accordion>
-     </section>
-    </ng-template>
-  </ng-container>
-  <ng-container ngbNavItem>
-    <a ngbNavLink>Done</a>
-    <ng-template ngbNavContent>
-      <p>
+        </section>
+     <!--  </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink>Done</a>
+      <ng-template ngbNavContent>
+        <p></p> -->
         <section class="done">
-            <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
-                <ngb-panel [disabled]="true">
-                    <ng-template ngbPanelHeader let-opened="opened" class="disabled">
-                      <button ngbPanelToggle class="accordion-button urgently disabled">
-                        <span><b> Urgently</b> &nbsp;04/10/2023</span>
-                      </button>
-                    </ng-template>
-                    <ng-template ngbPanelContent>
-                      <article class="accordion-body">
-                        <strong>Walking with pets.</strong>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                          do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                          Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                          laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <div class="d-flex justify-content-end">
-                          <button class="btn btn-warning btn-sm px-4 opacity-75">
-                            Send a message
-                          </button>
-        
-                          <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
-                            I take
-                          </button>
-                        </div>
-                      </article>
-                    </ng-template>
-                  </ngb-panel>
-              </ngb-accordion>
-         </section>
-    </ng-template>
-  </ng-container>
-</nav>
+          <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+            <ngb-panel [disabled]="true">
+              <ng-template ngbPanelHeader let-opened="opened" class="disabled">
+                <button
+                  ngbPanelToggle
+                  class="accordion-button urgently disabled"
+                >
+                  <span><b> Urgently</b> &nbsp;04/10/2023</span>
+                </button>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <article class="accordion-body">
+                  <strong>Walking with pets.</strong>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-warning btn-sm px-4 opacity-75">
+                      Send a message
+                    </button>
 
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
+                    <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                      I take
+                    </button>
+                  </div>
+                </article>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </section>
+      <!-- </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink>My account</a>
+      <ng-template ngbNavContent> -->
+        <section
+          class="my_account d-flex justify-content-between flex-wrap mb-4"
+        >
+          <article class="flex-shrink-0 row">
+            <img
+              [src]="imgUrl"
+              alt="Generic placeholder image"
+              class="card-img col"
+            />
+          </article>
+          <section class="col ms-3 d-flex flex-column justify-content-between">
+            <h5 class="mb-1">Elizaveta Pashkovskaya</h5>
+            <div
+              class="d-flex justify-content-start rounded-3 p-2"
+              style="background-color: #efefef"
+            >
+              <div>
+                <p class="small text-muted mb-1">Deals done</p>
+                <p class="mb-0">41</p>
+              </div>
+              <div class="px-3">
+                <p class="small text-muted mb-1">Neighbors</p>
+                <p class="mb-0">134</p>
+              </div>
+              <div>
+                <p class="small text-muted mb-1">Rating</p>
+                <p class="mb-0">10.0</p>
+              </div>
+            </div>
+            <div>
+              <p class="mb-2 pb-1" style="color: #2b2a2a; font-size: 1.2rem">
+                Some information about the person which was accepted after
+                registration. It might be information about him or his hobbies
+                or something else.
+              </p>
+            </div>
+            <div class="mt-4">
+              <button
+                type="button"
+                class="btn btnShow_id"
+                (click)="myQrCode = !myQrCode"
+              >
+                Show QR Code
+              </button>
+            </div>
+          </section>
+          <div class="ms-3 mt-4" *ngIf="myQrCode">
+            <h5>You QR Code:</h5>
+            <qrcode
+              [qrdata]="'Elizaveta Pashkovskaya volunteer from Naapuriliisuus'"
+              [width]="300"
+              [errorCorrectionLevel]="'M'"
+              >{{ myQrCode ? "Hide" : "Show" }}</qrcode
+            >
+          </div>
+        </section>
+     <!--  </ng-template>
+    </ng-container>
+  </nav>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
 </section>
-

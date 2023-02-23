@@ -1,29 +1,44 @@
 <body class="signInForm text-center" cz-shortcut-listen="true">
-    
-    <main class="form-signin w-100 m-1">
-      <form>
-        <h1 class="h3 mb-3 fw-normal">Please enter login and password</h1>
-    
-        <div class="info form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="info form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Password</label>
-        </div>
-    
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg" data-bs-toggle="button" type="submit">Sign in</button>
-      </form>
+  <main class="form-signin w-100 m-1 mt-4">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <h1 class="h3 mb-3 fw-normal">Please enter login and password</h1>
+      <div class="info form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          formControlName="email"
+          autocomplete="off"
+        />
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="info form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          formControlName="password"
+          autocomplete="off"
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
 
-      <span class="textline fs-4"> or </span>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me" /> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg" data-bs-toggle="button" type="submit">
+        Sign in
+      </button>
+    </form>
 
-      <button class="banklogin btn btn-lg" data-bs-toggle="button" type="submit">Sign in with bank credentials</button>
+    <span class="textline fs-4"> or </span>
 
-    </main>
-    </body>
+    <button class="banklogin btn btn-lg" data-bs-toggle="button" type="submit">
+      Sign in with bank credentials
+    </button>
+  </main>
+</body>

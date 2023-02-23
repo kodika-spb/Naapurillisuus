@@ -1,70 +1,163 @@
 <section class="form">
-  <h3 class="form_header_text">Please fill in the form below to ask for help</h3>
-    <form class="needs-validation" novalidate="">
-      <div class="row g-3">
-        <div class="col-sm-6">
-          <label for="firstName" class="form-label">First name</label>
-          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-        </div>
-        <div class="col-sm-6">
-          <label for="lastName" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-        </div>
-        <div class="col-sm-12">
-          <label for="phone" class="form-label">Phone number</label>
-          <input type="tel" class="form-control" id="phone" placeholder="+358-XX-XXX-XX-XX">
-        </div>
-          <div class="col-sm-6">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="name@example.com">
-            </div>
-            <div class="col-sm-6">
-              <label for="password" class="form-label">Password</label>
-              <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="password"
-            />
-            </div>
-        </div>
-        <hr class="my-4">
-        <div class="col-12">
-          <label for="address" class="form-label">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="" required="">
-          <div class="invalid-feedback">
-            Please enter your address.
-          </div>
-        </div>
+  <h3 class="form_header_text">
+    Please fill in the form below to ask for help
+  </h3>
+  <form class="needs-validation" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <div class="row g-3">
+      <div class="col-sm-6">
+        <label for="firstName" class="form-label">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="add your first name"
+          formControlName="firstName"
+        />
+        <p
+          *ngIf="
+            this.signUpForm.get('firstName')?.invalid &&
+            this.signUpForm.get('firstName')?.touched
+          "
+        >
+          <small class="text-danger">First name is required</small>
+        </p>
+      </div>
 
-        <div class="col-md-5">
-          <label for="country" class="form-label">City</label>
-          <select class="form-select" id="country" required="">
-            <option value="">Choose...</option>
-            <option>Helsinki</option>
-            <option>Espoo</option>
-            <option>Vantaa</option>
-            <option>Kuopio</option>
-            <option>Oulu</option>
-          </select>
-          <div class="invalid-feedback">
-            Please select a valid city.
-          </div>
-        </div>
-        <div class="col-md-3">
-          <label for="zip" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="zip" placeholder="" required="">
-          <div class="invalid-feedback">
-            Zip code required.
-          </div>
-        </div>
+      <div class="col-sm-6">
+        <label for="lastName" class="form-label">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="add your last name"
+          formControlName="lastName"
+        />
+        <p
+          *ngIf="
+            this.signUpForm.get('lastName')?.invalid &&
+            this.signUpForm.get('lastName')?.touched
+          "
+        >
+          <small class="text-danger">Last name is required</small>
+        </p>
+      </div>
 
-      <hr class="my-4">
+      <div class="col-sm-12">
+        <label for="phone" class="form-label">Phone number</label>
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="+358-XX-XXX-XX-XX"
+          formControlName="phone"
+        />
+        <!--  <p
+              *ngIf="
+                this.signUpForm.get('phone')?.invalid &&
+                this.signUpForm.get('phone')?.touched
+              "
+            >
+              <small class="text-danger">Phone number is required</small>
+            </p> -->
+      </div>
 
-      <button [routerLink]="['','client-tasks']" class="w-100 btn btn-lg" type="submit"> Ask for help</button>
-    </form>
+      <div class="col-sm-6">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+        <p
+          *ngIf="
+            this.signUpForm.get('email')?.invalid &&
+            this.signUpForm.get('email')?.touched
+          "
+        >
+          <small class="text-danger">Email is required</small>
+        </p>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="password"
+          formControlName="password"
+        />
+        <p
+          *ngIf="
+            this.signUpForm.get('password')?.invalid &&
+            this.signUpForm.get('password')?.touched
+          "
+        >
+          <small class="text-danger">Password is required</small>
+        </p>
+      </div>
+    </div>
+    <hr class="my-4" />
+    <div class="col-12">
+      <label for="address" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="add your street name and building"
+        formControlName="address"
+      />
+      <p
+        *ngIf="
+          this.signUpForm.get('address')?.invalid &&
+          this.signUpForm.get('address')?.touched
+        "
+      >
+        <small class="text-danger">Address is required</small>
+      </p>
+    </div>
+
+    <div class="col-md-5">
+      <label for="city" class="form-label">City</label>
+      <select class="form-select" formControlName="city">
+        <option value="">Choose...</option>
+        <option>Helsinki</option>
+        <option>Espoo</option>
+        <option>Vantaa</option>
+        <option>Kuopio</option>
+        <option>Oulu</option>
+      </select>
+      <p
+        *ngIf="
+          this.signUpForm.get('city')?.invalid &&
+          this.signUpForm.get('city')?.touched
+        "
+      >
+        <small class="text-danger">City is required</small>
+      </p>
+    </div>
+    <div class="col-md-3">
+      <label for="zip" class="form-label">Zip</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="add your zip-code"
+        formControlName="zip"
+      />
+
+      <p
+        *ngIf="
+          this.signUpForm.get('zip')?.invalid &&
+          this.signUpForm.get('zip')?.touched
+        "
+      >
+        <small class="text-danger">Zip-code is required</small>
+      </p>
+    </div>
+
+    <hr class="my-4" />
+
+    <button
+      class="w-100 btn btn-lg"
+      type="submit"
+    >
+      Ask for help
+    </button>
+  </form>
 </section>
-
-
-
- 
