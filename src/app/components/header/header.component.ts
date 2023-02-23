@@ -17,11 +17,20 @@ export class HeaderComponent {
   showTab() {
     return (
       [
-        '/client-tasks',
         '/helper-dashboard',
         '/helper-dashboard/my_tasks',
         '/helper-dashboard/done',
         '/helper-dashboard/my-account',
+      ].indexOf(window.location.pathname) != -1
+    );
+  }
+  showTapClient() {
+    return (
+      [
+        '/client-task-form',
+        '/client-tasks/my-tasks',
+        '/client-tasks/done'
+      
       ].indexOf(window.location.pathname) != -1
     );
   }

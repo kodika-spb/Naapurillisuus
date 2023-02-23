@@ -1,0 +1,56 @@
+<main class="container">
+    <section class="my_account d-flex justify-content-between flex-wrap  mb-4">
+        <article class="col">
+          <img
+            [src]="imgUrl"
+            alt="Generic placeholder image"
+            class="card-img col"
+          />
+        </article>
+        <section class="col ms-3 d-flex flex-column justify-content-between">
+          <h5 class="mb-1">Elizaveta Pashkovskaya</h5>
+          <div
+            class="d-flex justify-content-start rounded-3 p-2"
+            style="background-color: #efefef"
+          >
+            <div>
+              <p class="small text-muted mb-1">Deals done</p>
+              <p class="mb-0">41</p>
+            </div>
+            <div class="px-3">
+              <p class="small text-muted mb-1">Neighbors</p>
+              <p class="mb-0">134</p>
+            </div>
+            <div>
+              <p class="small text-muted mb-1">Rating</p>
+              <p class="mb-0">10.0</p>
+            </div>
+          </div>
+          <div>
+            <p class="mb-2 pb-1" style="color: #2b2a2a; font-size: 1.2rem">
+              Some information about the person which was accepted after
+              registration. It might be information about him or his hobbies or
+              something else.
+            </p>
+          </div>
+          <div class="mt-4">
+            <button
+              type="button"
+              class="btn btnShow_id"
+              (click)="myQrCode = !myQrCode"
+            >
+              Show QR Code
+            </button>
+          </div>
+        </section>
+        <div class="ms-3" *ngIf="myQrCode">
+          <h5>You QR Code:</h5>
+          <qrcode
+            [qrdata]="'Elizaveta Pashkovskaya volunteer from Naapuriliisuus'"
+            [width]="300"
+            [errorCorrectionLevel]="'M'"
+            >{{ myQrCode ? "Hide" : "Show" }}</qrcode
+          >
+        </div>
+      </section>
+    </main>
