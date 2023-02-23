@@ -12,7 +12,6 @@ import { HelperFormComponent } from './components/helper-form/helper-form.compon
 import { HelperDashboardComponent } from './components/helper-dashboard/helper-dashboard.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
-import { ClientTasksComponent } from './components/client-tasks/client-tasks.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -24,6 +23,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
 import { TabPanelComponent } from './components/tab-panel/tab-panel.component';
 import { HelpersTasksComponent } from './components/helpers-tasks/helpers-tasks.component';
+import { HelperDoneComponent } from './components/helper-done/helper-done.component';
+import { HelperMyAccountComponent } from './components/helper-my-account/helper-my-account.component';
+import { ClientMyTasksComponent } from './components/client-my-tasks/client-my-tasks.component';
+import { ClientDoneComponent } from './components/client-done/client-done.component';
+import { TabPanelClientComponent } from './components/tab-panel-client/tab-panel-client.component';
+import { ClientTaskFormComponent } from './components/client-task-form/client-task-form.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +42,14 @@ import { HelpersTasksComponent } from './components/helpers-tasks/helpers-tasks.
     HelperDashboardComponent,
     ContactFormComponent,
     ClientFormComponent,
-    ClientTasksComponent,
     TabPanelComponent,
-    HelpersTasksComponent
+    HelpersTasksComponent,
+    HelperDoneComponent,
+    HelperMyAccountComponent,
+    ClientMyTasksComponent,
+    ClientDoneComponent,
+    TabPanelClientComponent,
+    ClientTaskFormComponent
   ],
   imports: [
     BrowserModule,

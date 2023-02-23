@@ -7,14 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TabPanelComponent {
   @Input() showTap: boolean;
-  status: boolean = true
-
-
-
-  clickEvent(){
-    this.status = !this.status
-  }
-   
-
+ 
  
 }
