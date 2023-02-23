@@ -22,6 +22,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QRCodeModule } from 'angularx-qrcode';
+import { TabPanelComponent } from './components/tab-panel/tab-panel.component';
+import { HelpersTasksComponent } from './components/helpers-tasks/helpers-tasks.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { QRCodeModule } from 'angularx-qrcode';
     HelperDashboardComponent,
     ContactFormComponent,
     ClientFormComponent,
-    ClientTasksComponent 
+    ClientTasksComponent,
+    TabPanelComponent,
+    HelpersTasksComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     FormsModule,
     ReactiveFormsModule,
     QRCodeModule,
+    
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
