@@ -42,10 +42,6 @@
   opacity: 85%;
   padding: 0.3em 1.6rem;
 }
-/* .btn-send:hover{
-  color: var(--brown);
-  background-color: #ffd453;;
-} */
 .btn-take:hover {
   color: white;
   background-color: #24aa6b;

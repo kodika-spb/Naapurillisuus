@@ -1,6 +1,3 @@
-     <!--  <button type="button" class="btn  me-2">Login</button> -->
-
-
      <section class="container">
       <header
         class="d-flex align-items-center justify-content-between justify-content-md-between border-bottom"
@@ -22,9 +19,10 @@
         </a>
     
         <article class="sign_in_main">
-          <!-- <button [routerLink]="['sign-in']" class="btn">Sign in</button> -->
           <button *ngIf="!(afAuth.user | async)" [routerLink]="['sign-in']" class="btn">Login</button>
           <button *ngIf="(afAuth.user | async)" [routerLink]= "['']" (click)="logout()" class="btn">Logout</button>
         </article>
       </header>
     </section>
+
+    <app-tab-panel *ngIf="showTab()"></app-tab-panel>

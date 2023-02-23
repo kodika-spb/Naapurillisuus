@@ -1,110 +1,50 @@
 <section class="container">
-  <nav ngbNav #nav="ngbNav" class="nav-tabs">
+<!--   <nav ngbNav #nav="ngbNav" class="nav-tabs">
     <ng-container ngbNavItem>
       <a ngbNavLink>Tasks list</a>
-      <ng-template ngbNavContent>
+      <ng-template ngbNavContent> -->
         <section class="task_list" ngbnavlink="task_list">
-          <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1" *ngFor="let task of tasks" >
+          <ngb-accordion
+            #a="ngbAccordion"
+            activeIds="custom-panel-1"
+            *ngFor="let task of tasks"
+          >
             <ngb-panel id="custom-panel-1">
               <ng-template ngbPanelHeader let-opened="opened">
-                <button ngbPanelToggle class="accordion-button" [ngClass]="{'shopping':task.class == 'shopping','urgently':task.class == 'urgently','pets':task.class == 'pets','other':task.class == 'others'}">
-                  <span><b> {{task.category}}</b> &nbsp;{{task.date}}</span>
+                <button
+                  ngbPanelToggle
+                  class="accordion-button"
+                  [ngClass]="{
+                    shopping: task.class == 'shopping',
+                    urgently: task.class == 'urgently',
+                    pets: task.class == 'pets',
+                    other: task.class == 'others'
+                  }"
+                >
+                  <span
+                    ><b> {{ task.category }}</b> &nbsp;{{ task.date }}</span
+                  >
                 </button>
               </ng-template>
               <ng-template ngbPanelContent>
                 <article class="accordion-body">
-                  <strong>{{task.title}}</strong>
+                  <strong>{{ task.title }}</strong>
                   <p>
-                   {{task.description}}
+                    {{ task.description }}
                   </p>
                   <div class="d-flex justify-content-end">
-                    <button class="btn btn-take btn-lg">I take</button>
+                    <button class="btn btn-take btn-lg" (click)="addToMyTasks()">I take</button>
                   </div>
                 </article>
               </ng-template>
             </ngb-panel>
-<!--             <ngb-panel>
-              <ng-template ngbPanelHeader>
-                <button ngbPanelToggle class="accordion-button urgently">
-                  <span><b> Urgently</b> &nbsp;04/10/2023</span>
-                </button>
-              </ng-template>
-              <ng-template ngbPanelContent>
-                <div class="accordion-body">
-                  <strong>Need help with PC</strong>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                    <button class="btn btn-take btn-lg">I take</button>
-                  </div>
-                </div>
-              </ng-template>
-            </ngb-panel>
-            <ngb-panel>
-              <ng-template ngbPanelHeader let-opened="opened">
-                <button ngbPanelToggle class="accordion-button pets">
-                  <span><b> Walk with pets</b>&nbsp;05/10/2023</span>
-                </button>
-              </ng-template>
-              <ng-template ngbPanelContent>
-                <div class="accordion-body">
-                  <strong>Could ypu plese to take a walk my dog</strong>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <div class="d-flex justify-content-end">
-                    <button class="btn btn-take btn-lg">I take</button>
-                  </div>
-                </div>
-              </ng-template>
-            </ngb-panel>
-            <ngb-panel
-              [disabled]="disabled"
-              [cardClass]="disabled ? 'disabled' : ''"
-            >
-              <ng-template ngbPanelHeader let-opened="opened">
-                <button ngbPanelToggle class="accordion-button shopping">
-                  <span><b> Shopping</b> &nbsp;04/10/2023</span>
-                </button>
-              </ng-template>
-              <ng-template ngbPanelContent>
-                <div class="accordion-body">
-                  <strong>I need some food</strong>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <div class="d-flex justify-content-end">
-                    <button class="btn btn-take btn-lg">I take</button>
-                  </div>
-                </div>
-              </ng-template>
-            </ngb-panel>
-            <ngb-panel
-              [disabled]="disabled"
-              [cardClass]="disabled ? 'disabled' : ''"
-            >
-              <ng-template ngbPanelHeader let-opened="opened">
-                <button ngbPanelToggle class="accordion-button other">
-                  <span><b> Other</b> &nbsp;04/10/2023</span>
-                </button>
-              </ng-template>
-            </ngb-panel> -->
           </ngb-accordion>
         </section>
-      </ng-template>
+   <!--    </ng-template>
     </ng-container>
     <ng-container ngbNavItem>
       <a ngbNavLink>My tasks</a>
-      <ng-template ngbNavContent>
+      <ng-template ngbNavContent> -->
         <section class="my_tasks">
           <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
             <ngb-panel id="custom-panel-1">
@@ -134,12 +74,12 @@
             </ngb-panel>
           </ngb-accordion>
         </section>
-      </ng-template>
+     <!--  </ng-template>
     </ng-container>
     <ng-container ngbNavItem>
       <a ngbNavLink>Done</a>
       <ng-template ngbNavContent>
-        <p></p>
+        <p></p> -->
         <section class="done">
           <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
             <ngb-panel [disabled]="true">
@@ -174,11 +114,11 @@
             </ngb-panel>
           </ngb-accordion>
         </section>
-      </ng-template>
+      <!-- </ng-template>
     </ng-container>
     <ng-container ngbNavItem>
       <a ngbNavLink>My account</a>
-      <ng-template ngbNavContent>
+      <ng-template ngbNavContent> -->
         <section
           class="my_account d-flex justify-content-between flex-wrap mb-4"
         >
@@ -228,16 +168,16 @@
           <div class="ms-3 mt-4" *ngIf="myQrCode">
             <h5>You QR Code:</h5>
             <qrcode
-              [qrdata]="'myQrCode'"
+              [qrdata]="'Elizaveta Pashkovskaya volunteer from Naapuriliisuus'"
               [width]="300"
               [errorCorrectionLevel]="'M'"
               >{{ myQrCode ? "Hide" : "Show" }}</qrcode
             >
           </div>
         </section>
-      </ng-template>
+     <!--  </ng-template>
     </ng-container>
   </nav>
 
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
 </section>

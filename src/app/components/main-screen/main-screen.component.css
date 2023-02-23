@@ -1,4 +1,8 @@
+.main-block{
+  min-height: 40vh;
+}
 .header-text {
+  margin-top: 100px;
   color: var(--brown);
   margin-bottom: 2rem;
 }
@@ -47,14 +51,10 @@
 }
 
 
-
-@media only screen and (min-width: 1440px) {
-  .main-block {
-    margin-top: 100px;
-  }
-}
-
 @media only screen and (max-width: 768px) {
+  .header-text {
+    margin-top: 0;
+  }
   .btn {
     width: 50%;
   }
