@@ -25,7 +25,7 @@ export class HelperFormComponent {
   ) {}
 
   ngOnInit(): void {
-    this.myAngularxQrCode = 'ItSoluionStuff.com';
+    this.myAngularxQrCode = '';
     this.firebaseErrorMessage = '';
     this.signupForm = new FormGroup({
       'firstName': new FormControl('', Validators.required),
@@ -40,14 +40,11 @@ export class HelperFormComponent {
       'zip': new FormControl('', [Validators.required]),
 
     });
-   /*  if (this.authService.isLoggedIn()) {
-      this.router.navigate(['helper-dashboard']);
-    } */
   }
 
   signUp() {
     if (this.signupForm.invalid) {
-      return alert('This form is required. Please fill out the form.');
+      this.signupForm.markAllAsTouched()
     }
 
     this.authService
