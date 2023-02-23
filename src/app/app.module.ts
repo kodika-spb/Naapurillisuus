@@ -12,7 +12,16 @@ import { HelperFormComponent } from './components/helper-form/helper-form.compon
 import { HelperDashboardComponent } from './components/helper-dashboard/helper-dashboard.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
-import { ClientTasksComponent } from './components/client-tasks/client-tasks.component'
+import { ClientTasksComponent } from './components/client-tasks/client-tasks.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -32,7 +41,16 @@ import { ClientTasksComponent } from './components/client-tasks/client-tasks.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    QRCodeModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
 
   ],
   providers: [],
