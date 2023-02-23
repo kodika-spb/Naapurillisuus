@@ -27,7 +27,7 @@ export class ClientFormComponent {
 
   signUp() {
     if (this.signUpForm.invalid) {
-      return alert('This form is required. Please fill out the form.');
+      this.signUpForm.markAllAsTouched()
     }
   }
 }
