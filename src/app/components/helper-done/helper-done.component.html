@@ -1,0 +1,33 @@
+<section class="container">
+  <section class="done">
+    <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+      <ngb-panel [disabled]="true">
+        <ng-template ngbPanelHeader let-opened="opened" class="disabled">
+          <button ngbPanelToggle class="accordion-button urgently disabled">
+            <span><b> Urgently</b> &nbsp;04/10/2023</span>
+          </button>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <article class="accordion-body">
+            <strong>Walking with pets.</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-warning btn-sm px-4 opacity-75">
+                Send a message
+              </button>
+
+              <button class="btn btn-success btn-sm px-4 ms-3 opacity-75">
+                I take
+              </button>
+            </div>
+          </article>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </section>
+</section>
