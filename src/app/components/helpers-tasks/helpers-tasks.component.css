@@ -72,6 +72,9 @@
     margin-top:15px;
     text-align: center;
   }
+  .actions {
+    text-decoration: none;
+  }
   
   @media only screen and (max-width: 425px) {
     .task_list,
