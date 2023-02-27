@@ -56,21 +56,32 @@
   color: var(--main-color);
   font-size: 1.2rem;
 }
+
 .card-img {
-  width: 300px;
-  height: 300px;
+  width: 90%;
+  height: 400px;
   object-fit: cover;
   border-radius: 1rem;
 }
 .btnShow_id {
   width: 50%;
-  background-color: var( --clients-btns);
+  background-color: var(--clients-btns);
 }
+
 #qrcode {
-  width:160px;
-  height:160px;
-  margin-top:15px;
+  width: 160px;
+  height: 160px;
   text-align: center;
+}
+.text-qr {
+  margin-left: 1.5rem;
+}
+@media only screen and (max-width: 768px) {
+  .card-img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 1rem;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -82,12 +93,11 @@
   .nav {
     margin: 0.5em;
   }
-  .nav-link{
+  .nav-link {
     font-size: 1rem;
   }
-  .card-img{
-    width: 380px;
-    border-radius: 1rem;
+  .card-img {
+    width: 360px;
     margin-bottom: 1rem;
   }
   .btn-send {
@@ -97,12 +107,35 @@
   .btnShow_id {
     width: 100%;
   }
+  .text-qr {
+    margin-top: 1rem;
+  }
+  .qrcode {
+    margin-left: 1.5rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .task_list,
+  .done,
+  .my_tasks {
+    margin: 0.5em;
+  }
+  .card-img {
+    width: 320px;
+    height: 300px;
+    margin-bottom: 1rem;
+  }
 }
 @media only screen and (max-width: 320px) {
   .task_list,
   .done,
   .my_tasks {
     margin: 0.5em;
+  }
+  .card-img {
+    width: 250px;
+    height: 300px;
+    margin-bottom: 1rem;
   }
   .nav {
     margin: 0.5em;

@@ -7,14 +7,31 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  /*   imgUrl ='./assets/Logo_naapuri.png'; */
-  /*  imgUrl = './assets/logo2.png'; */
-  /*  imgUrl = './assets/logo_violetti.png'; */
   imgUrl = './assets/logotip.png';
-  /*  imgUrl = './assets/third_logo.png'; */
-  constructor (public afAuth: AngularFireAuth){}
+  constructor(public afAuth: AngularFireAuth) {}
 
-  logout(): void{
+  logout(): void {
     this.afAuth.signOut();
+  }
+
+  showTab() {
+    return (
+      [
+        '/helper-dashboard',
+        '/helper-dashboard/my_tasks',
+        '/helper-dashboard/done',
+        '/helper-dashboard/my-account',
+      ].indexOf(window.location.pathname) != -1
+    );
+  }
+  showTapClient() {
+    return (
+      [
+        '/client-task-form',
+        '/client-tasks/my-tasks',
+        '/client-tasks/done'
+      
+      ].indexOf(window.location.pathname) != -1
+    );
   }
 }

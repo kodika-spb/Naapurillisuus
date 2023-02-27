@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { UserModel } from '../models/user.model';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { User } from '../models/users';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
 
-  userRef: AngularFirestoreCollection<UserModel>;
+  userRef: AngularFirestoreCollection<User>;
   userLoggedIn: boolean;
   userData: any;
+
 
   constructor(private router: Router, private afAuth: AngularFireAuth, public afs: AngularFirestore) {
     this.afAuth.authState.subscribe((user)=> {
       this.userLoggedIn = false;
 
+      this.userLoggedIn = false;
       if(user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
@@ -27,29 +29,43 @@ export class AuthService {
         JSON.parse(localStorage.getItem('user')!);
         this.userLoggedIn = false
       }
+    this.userRef = this.afs.collection<User>('users');
     });
-    this.userRef = this.afs.collection<UserModel>('users');
-  }
+  // constructor(private router: Router, private afAuth: AngularFireAuth) {}
 
-  signupUser(user: any): Promise<any>{
+  // ngOnInit() {
+    
+  //   };
+  }
+  setToken(token: string) {
+    localStorage.setItem('token', token);
+  }
+  getToken() {
+    return localStorage.getItem('token');
+  }
+  isLoggedIn() {
+    return this.getToken() !== null;
+  }
+  signUpUser(user: any): Promise<any>{
     return this.afAuth.createUserWithEmailAndPassword(user.email, user.password)
     .then((result) => {
       let emailLower = user.email.toLowerCase();
       result.user?.sendEmailVerification();
-
-        const userModel: UserModel = {
-        id: result.user?.uid,
+        const userModel: User = {
+        uid: user.uid,
         firstName: user.firstName,
         lastName: user.lastName,
         email: emailLower,
         password: user.password,
         address: user.address,
         city: user.city,
-        zipCode: user.zipCode,
+        zip: user.zip,
         about: user.about,
         role: user.role,
-        phone: user?.phone,
-        helps: user.helps,
+        phoneNumber: user?.phone,
+        displayName: user.email,
+        photoURL: user.photoURL,
+        providerId: user.providerId, 
       }
       this.SetUserData(userModel)
     })
@@ -62,20 +78,20 @@ export class AuthService {
     });
   }
 
-  loginUser(email: string, password: string): Promise<any>{
-    return this.afAuth.signInWithEmailAndPassword(email, password)
-    .then((result) => {
-      this.SetUserData(result.user)
-      console.log('Auth service: loginUser: success');
-    })
-    .catch(error => {
-      console.log('Auth service: login error...');
-      console.log('error code', error.code);
-      console.log('error', error);
-      if (error.code)
-      return {isValid: false, message: error.message };
-      return error.message;
-    });
+  loginUser(email: string, password: string): Promise<any> {
+    return this.afAuth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log('Auth service: loginUser: success');
+      })
+      .catch((error) => {
+        console.log('Auth service: login error...');
+        console.log('error code', error.code);
+        console.log('error', error);
+        if (error.code) return { isValid: false, message: error.message };
+        return error.message;
+      });
+
   }
 
   SetUserData(user:any){
