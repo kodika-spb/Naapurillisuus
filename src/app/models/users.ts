@@ -6,6 +6,10 @@ export interface User extends UserInfo{
   address: string;
   city: string;
   zip: string;
+  password: string,
+  about: string,
+  role: string,
+  phone?: string,
 }
 
 export interface Client extends User {
