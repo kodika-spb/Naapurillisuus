@@ -7,7 +7,7 @@
             class="card-img col"
           />
         </article>
-        <section class="col ms-3 d-flex flex-column justify-content-between">
+        <section class="col d-flex flex-column justify-content-between gap-3">
           <h5 class="mb-1">Elizaveta Pashkovskaya</h5>
           <div
             class="d-flex justify-content-start rounded-3 p-2"
@@ -39,12 +39,12 @@
               class="btn btnShow_id"
               (click)="myQrCode = !myQrCode"
             >
-              Show QR Code
+            {{myQrCode ? 'Hide' : 'Show'}} QR code
             </button>
           </div>
         </section>
-        <div class="ms-3" *ngIf="myQrCode">
-          <h5>You QR Code:</h5>
+        <div class="qr" *ngIf="myQrCode">
+          <h5 class="text-qr">You QR Code:</h5>
           <qrcode
             [qrdata]="'Elizaveta Pashkovskaya volunteer from Naapuriliisuus'"
             [width]="300"

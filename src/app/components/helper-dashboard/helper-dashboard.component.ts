@@ -22,7 +22,7 @@ export class HelperDashboardComponent implements OnInit {
   ngOnInit(): void {}
 
   addToMyTasks(){
-  this.router.navigate(['helper-dashboard/my-tasks'])
+  this.router.navigate(['/helper-dashboard/my_tasks'])
   }
  
 }
