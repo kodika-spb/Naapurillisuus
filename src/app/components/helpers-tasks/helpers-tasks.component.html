@@ -24,6 +24,14 @@
               </button>
             </div>
           </article>
+          <article class="d-flex flex-column">
+            <a class="mb-4 mt-4 text-secondary align-self-center" (click)="manageTask = !manageTask">Manage task</a>
+            <div class="d-flex flex-row justify-content-center"  *ngIf="manageTask">
+              <button class="btn btn-secondary opacity-75 me-2" (click)="cancelTask()">Cancel task</button>
+              <button class="btn btn-success opacity-75" (click)="completedTask()">Completed</button>
+            </div>
+
+          </article>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>

@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class HelperMyAccountComponent {
 
   myQrCode: boolean = false;
-  imgUrl = './assets/myAcc4.png';
+  imgUrl = './assets/myAcc1.png';
 
 }
