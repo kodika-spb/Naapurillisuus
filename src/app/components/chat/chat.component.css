@@ -1,0 +1,6 @@
+.btn-send {
+    font-size: 1rem;
+    color: var(--brown);
+    background-color: #ffd453;
+    width: 20%;
+  }

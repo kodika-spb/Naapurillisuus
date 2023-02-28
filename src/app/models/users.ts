@@ -11,4 +11,18 @@ export interface User{
   role: string;
   phoneNumber?: string,
   photoURL?: string | null;
+} 
+
+
+
+/* import { UserInfo } from "firebase/auth";
+
+export interface User extends UserInfo{
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  zip: string;
+  about: string;
 }
+ */
