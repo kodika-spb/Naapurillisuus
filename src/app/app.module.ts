@@ -30,6 +30,12 @@ import { ClientDoneComponent } from './components/client-done/client-done.compon
 import { TabPanelClientComponent } from './components/tab-panel-client/tab-panel-client.component';
 import { ClientTaskFormComponent } from './components/client-task-form/client-task-form.component';
 
+import { AuthService } from './services/auth.service';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,10 +71,13 @@ import { ClientTaskFormComponent } from './components/client-task-form/client-ta
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
-
+    provideStorage(() => getStorage()),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
