@@ -76,6 +76,11 @@
 .text-qr {
   margin-left: 1.5rem;
 }
+.ask_help_btn{
+  background-color: var(--main-client);
+  color: white;
+  width: 30%;
+}
 @media only screen and (max-width: 768px) {
   .card-img {
     width: 300px;
@@ -113,6 +118,7 @@
   .qrcode {
     margin-left: 1.5rem;
   }
+
 }
 @media only screen and (max-width: 375px) {
   .task_list,

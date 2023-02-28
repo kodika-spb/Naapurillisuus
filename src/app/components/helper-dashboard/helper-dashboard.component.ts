@@ -3,7 +3,7 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
 import { VTask } from 'src/app/models/vtasks';
 import { tasks as data } from 'src/app/data/tasks';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TabPanelComponent } from '../tab-panel/tab-panel.component';
 
 @Component({
@@ -16,13 +16,13 @@ export class HelperDashboardComponent implements OnInit {
   disabled = false;
   myQrCode: boolean = false;
   tasks: VTask[] = data;
+  active: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute ) {}
 
   ngOnInit(): void {}
 
-  addToMyTasks(){
-  this.router.navigate(['/helper-dashboard/my_tasks'])
+  addToMyTasks() {
+    this.router.navigate(['/helper-dashboard/my_tasks'])
+    }
   }
- 
-}
