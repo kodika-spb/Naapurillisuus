@@ -48,11 +48,14 @@ export class AuthService {
   }
   signUpUser(user: any): Promise<any>{
     return this.afAuth.createUserWithEmailAndPassword(user.email, user.password)
-    .then((result) => {
+    .then((result) => { 
+      if (user.role === "client") {
+        
+      }
       let emailLower = user.email.toLowerCase();
       result.user?.sendEmailVerification();
         const userModel: User = {
-        uid: user.uid,
+        uid: result.user?.uid,
         firstName: user.firstName,
         lastName: user.lastName,
         email: emailLower,
@@ -60,12 +63,10 @@ export class AuthService {
         address: user.address,
         city: user.city,
         zip: user.zip,
-        about: user.about,
+        about: user?.about,
         role: user.role,
         phoneNumber: user?.phone,
-        displayName: user.email,
-        photoURL: user.photoURL,
-        providerId: user.providerId, 
+        photoURL: result.user?.photoURL, 
       }
       this.SetUserData(userModel)
     })

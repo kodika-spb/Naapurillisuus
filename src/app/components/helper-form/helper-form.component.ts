@@ -55,7 +55,7 @@ export class HelperFormComponent {
         if (result == null) {
           this.router.navigate(['helper-dashboard']);
         }
-        return throwError(() =>  new Error('Faild login')); 
+        return throwError(() =>  new Error('Failed login')); 
       })
       .catch(() => {});
   }
