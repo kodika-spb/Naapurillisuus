@@ -8,21 +8,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TabPanelComponent implements OnInit {
   @Input() showTap: boolean;
-  active: any;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit() {
-    this.activatedRoute.queryParams.subscribe((params) => {
-      if (window.location.pathname === 'helper-dashboard') {
-        this.active = 1;
-      } else if (window.location.pathname === '/helper-dashboard/my_tasks') {
-        this.active = 2;
-      } else if (window.location.pathname === '/helper-dashboard/done') {
-        this.active = 3;
-      } else if (window.location.pathname === '/helper-dashboard/my-account') {
-        this.active = 4;
-      }
-    });
+  ngOnInit() {}
+
+  getActive() {
+    if (window.location.pathname === 'helper-dashboard') {
+      return 1;
+    } else if (window.location.pathname === '/helper-dashboard/my_tasks') {
+      return 2;
+    } else if (window.location.pathname === '/helper-dashboard/done') {
+      return 3;
+    } else if (window.location.pathname === '/helper-dashboard/my-account') {
+      return 4;
+    }
+    return 1;
   }
 }

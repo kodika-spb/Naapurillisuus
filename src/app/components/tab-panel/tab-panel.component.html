@@ -1,5 +1,5 @@
 <section class="container mt-4">
-  <nav ngbNav #nav="ngbNav" class="nav-tabs" [(activeId)]="active">
+  <nav ngbNav #nav="ngbNav" class="nav-tabs" [activeId]="getActive()">
     <ng-container [ngbNavItem]="1">
       <a
         ngbNavLink
