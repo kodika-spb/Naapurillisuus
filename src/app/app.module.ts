@@ -31,6 +31,12 @@ import { TabPanelClientComponent } from './components/tab-panel-client/tab-panel
 import { ClientTaskFormComponent } from './components/client-task-form/client-task-form.component';
 import { ChatComponent } from './components/chat/chat.component';
 
+import { AuthService } from './services/auth.service';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,10 +73,13 @@ import { ChatComponent } from './components/chat/chat.component';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
-
+    provideStorage(() => getStorage()),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
