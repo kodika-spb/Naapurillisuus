@@ -1,5 +1,8 @@
 <section class="container">
   <section class="task-form">
+
+    <!-- Personal info and address -->
+
     <article class="personalinfo">
       <p><strong>Your Information</strong></p>
       <p>
@@ -16,6 +19,9 @@
       </p>
       <a href="">Edit Information</a>
     </article>
+
+    <!-- Type of help choice -->
+
     <article class="my-3 helptype">
       <h6>Type of help I need:</h6>
       <div class="form-check">
@@ -39,6 +45,33 @@
         <label class="form-check-label">Help with moving</label>
       </div>
     </article>
+
+    <!-- Date choice -->
+
+    <article class="date col">
+      <h6>When? Choose the date:</h6>
+
+        <form class="row row-cols-md-auto">
+          <div class="col">
+            <div class="input-group">
+              <input
+                class="form-control"
+                placeholder="dd/mm/yyyy"
+                name="d2"
+                #c2="ngModel"
+                [(ngModel)]="model2"
+                ngbDatepicker
+                #d2="ngbDatepicker"
+              />
+              <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d2.toggle()" type="button"></button>
+            </div>
+          </div>
+        </form>
+        <button class="btn today_btn mt-3" (click)="model2 = today">Today</button>
+    </article>
+
+    <!-- Comments anfd emergency tag -->
+
     <section class="comment">
       <h6>Comments:</h6>
       <textarea
@@ -47,11 +80,11 @@
         id="floatingTextarea2"
         style="height: 100px"
       ></textarea>
-      <div class="form-checks mt-2">
-        <input type="checkbox" class="form-check-input" required="" />
+      <div class="mt-2 form-check">
+        <input type="checkbox" class="form-check-input" checked="" />
         <label class="form-check-label">Emergency</label>
       </div>
     </section>
-    <button type="button" class="save_btn">Send my request</button>
+    <button type="button" class="btn save_btn" (click)="addToClientTask()">Send my request</button>
   </section>
 </section>

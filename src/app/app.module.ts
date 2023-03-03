@@ -35,6 +35,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { VolunteerCardFClientComponent } from './volunteer-card-f-client/volunteer-card-f-client.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     ClientMyTasksComponent,
     ClientDoneComponent,
     TabPanelClientComponent,
-    ClientTaskFormComponent
+    ClientTaskFormComponent,
+    VolunteerCardFClientComponent
   ],
   imports: [
     BrowserModule,
