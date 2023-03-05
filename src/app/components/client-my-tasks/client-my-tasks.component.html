@@ -17,11 +17,16 @@
                   ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <a href="">Edit task</a> <br>
-                <button class="btn" routerLink="/volunteer-card">Show your volunteer</button>
+                <button class="btn" (click)="showVolunteer()">Show your volunteer</button>
+                
+                <app-volunteer-card-f-client *ngIf="volunteer_visible" ></app-volunteer-card-f-client>
+                
               </article>
             </ng-template>
           </ngb-panel>
         </ngb-accordion>
       </section>
 </section>
+
+
 

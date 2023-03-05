@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class VolunteerCardFClientComponent {
 
+  myQrCode: boolean = false;
+  imgUrl = './assets/myAcc1.png';
 }

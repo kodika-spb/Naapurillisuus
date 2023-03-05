@@ -14,7 +14,6 @@ import { HelperMyAccountComponent } from './components/helper-my-account/helper-
 import { ClientMyTasksComponent } from './components/client-my-tasks/client-my-tasks.component';
 import { ClientDoneComponent } from './components/client-done/client-done.component';
 import { ClientTaskFormComponent } from './components/client-task-form/client-task-form.component';
-import { VolunteerCardFClientComponent } from './volunteer-card-f-client/volunteer-card-f-client.component';
 
 const routes: Routes = [
   { path: '', component: MainScreenComponent },
@@ -34,7 +33,6 @@ const routes: Routes = [
 
   { path: 'client-tasks/my-tasks', component: ClientMyTasksComponent },
   { path: 'client-tasks/done', component: ClientDoneComponent},
-  { path: 'volunteer-card', component: VolunteerCardFClientComponent},
 
 
 ];
