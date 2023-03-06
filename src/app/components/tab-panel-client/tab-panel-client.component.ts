@@ -8,4 +8,15 @@ import { Component, Input } from '@angular/core';
 export class TabPanelClientComponent {
   @Input() showTapshowTabClient: boolean;
 
+  getActive() {
+    if (window.location.pathname === 'client-task-form') {
+      return 1;
+    } else if (window.location.pathname === '/client-tasks/my-tasks') {
+      return 2;
+    } else if (window.location.pathname === '/client-tasks/done') {
+      return 3;
+    }
+    return 1;
+  }
+
 }

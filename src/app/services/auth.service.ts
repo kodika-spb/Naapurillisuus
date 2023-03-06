@@ -12,6 +12,7 @@ export class AuthService {
   userRef: AngularFirestoreCollection<User>;
   userLoggedIn: boolean;
   userData: any;
+  user: any
 
 
   constructor(private router: Router, private afAuth: AngularFireAuth, public afs: AngularFirestore) {
