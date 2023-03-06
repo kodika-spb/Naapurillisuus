@@ -6,3 +6,7 @@
     color: var(--main-color);
     font-size: 1.2rem;
   }
+
+  .call-nav-link {
+    color: #48b200;
+  }
