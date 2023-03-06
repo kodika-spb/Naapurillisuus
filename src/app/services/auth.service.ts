@@ -12,6 +12,7 @@ export class AuthService {
   userRef: AngularFirestoreCollection<User>;
   userLoggedIn: boolean;
   userData: any;
+  user: any
 
 
   constructor(private router: Router, private afAuth: AngularFireAuth, public afs: AngularFirestore) {
@@ -102,25 +103,3 @@ export class AuthService {
     return this.userRef.add(user);
   }
 }
-
-
-
-
-
-/* 
-loginUser(email: string, password: string): Promise<any> {
-  return this.afAuth
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredentials: any) => {
-     this.user = userCredentials.user
-      console.log('Auth service: loginUser: success');
-    })
-    .catch((error) => {
-      console.log('Auth service: login error...');
-      console.log('error code', error.code);
-      console.log('error', error);
-      if (error.code) return { isValid: false, message: error.message };
-      return error.message;
-    });
-}
- */

@@ -87,6 +87,11 @@
     height: 300px;
     margin-bottom: 1rem;
   }
+  .ask_help_btn{
+    width: 29%;
+    height: 30px;
+    font-size: 0.7em;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -118,6 +123,7 @@
   .qrcode {
     margin-left: 1.5rem;
   }
+ 
 
 }
 @media only screen and (max-width: 375px) {
@@ -127,9 +133,14 @@
     margin: 0.5em;
   }
   .card-img {
-    width: 320px;
+    width: 310px;
     height: 300px;
     margin-bottom: 1rem;
+  }
+  .ask_help_btn{
+    width: 29%;
+    height: 30px;
+    font-size: 0.7em;
   }
 }
 @media only screen and (max-width: 320px) {
