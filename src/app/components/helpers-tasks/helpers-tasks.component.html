@@ -16,15 +16,7 @@
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <!-- instead this block we use app-chat components -->
-            <!--      <div class="d-flex flex-column col-12">
-              <p class="fs-6 fw-semibold">Asking for details:</p>
-              <textarea name="" id="" rows="3"></textarea>
-              <button class="btn btn-send btn-lg mt-4 align-self-end">
-                send a message
-              </button>
-            </div> --> 
-            <!-- instead this block we use app-chat components -->
+            <!-- Chat -->
             <app-chat></app-chat>
           </article>
           <article class="d-flex flex-column">
@@ -38,13 +30,13 @@
               *ngIf="manageTask"
             >
               <button
-                class="btn btn-secondary opacity-75 me-2"
-                (click)="cancelTask()"
+                class="btn btn-secondary small-btn opacity-75 me-2"
+                (click)="canceledTask()"
               >
                 Cancel the task
               </button>
               <button
-                class="btn btn-success opacity-75"
+                class="btn btn-success opacity-75 small-btn"
                 (click)="completedTask()"
               >
                 Complete the task
@@ -55,4 +47,7 @@
       </ngb-panel>
     </ngb-accordion>
   </section>
+  <app-modal-tasks
+    *ngIf="modalTasksService.isVisible$ | async"
+  ></app-modal-tasks>
 </section>

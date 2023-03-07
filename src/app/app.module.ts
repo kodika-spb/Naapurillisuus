@@ -36,6 +36,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ModalTasksComponent } from './components/modal-tasks/modal-tasks.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     ClientDoneComponent,
     TabPanelClientComponent,
     ClientTaskFormComponent,
-    ChatComponent
+    ChatComponent,
+    ModalTasksComponent
   ],
   imports: [
     BrowserModule,
