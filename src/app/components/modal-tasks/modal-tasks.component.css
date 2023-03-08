@@ -5,7 +5,7 @@ section::backdrop{
   width: 40%;
   height: auto;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 30%;
   border-radius: 1rem;
   background-color: white;
@@ -22,6 +22,11 @@ section::backdrop{
   position: absolute;
   background-color: black;
   opacity: 25%;
+}
+.modalBtn{
+  background-color: var(--main-color);
+  border: none;
+  color: white;
 }
 
 @media only screen and (max-width: 425px) {

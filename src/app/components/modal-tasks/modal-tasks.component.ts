@@ -9,7 +9,6 @@ import { ModalTasksService } from 'src/app/services/modal-tasks.service';
 export class ModalTasksComponent implements OnInit {
   titleCancel: string = 'Do you really want to cancel this task?';
   titleDone: string = 'Do you want to complete this task?';
-  isVisible: true;
 
   constructor(public modalTasksService: ModalTasksService) {}
 
