@@ -10,6 +10,9 @@
   margin: 2rem;
   padding: 0;
 }
+.userText{
+  font-size: 2rem;
+}
 .urgently {
   color: var(--brown);
   background-color: var(--emergency);
@@ -82,6 +85,9 @@
   width: 30%;
 }
 @media only screen and (max-width: 768px) {
+  .userText{
+    font-size: 1.2rem;
+  }
   .card-img {
     width: 300px;
     height: 300px;

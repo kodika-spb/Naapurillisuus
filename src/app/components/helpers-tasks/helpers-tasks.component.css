@@ -100,6 +100,11 @@
     .btnShow_id {
       width: 100%;
     }
+    .small-btn {
+      width: auto;
+      font-size: .8em;
+
+    }
   }
   @media only screen and (max-width: 320px) {
     .task_list,

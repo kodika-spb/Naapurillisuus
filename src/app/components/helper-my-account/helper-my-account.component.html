@@ -9,7 +9,9 @@
     </article>
     <section class="col d-flex flex-column justify-content-between gap-3">
       <article class="d-flex justify-content-between">
-        <h5 class="mb-1">{{currentUser.firstName}} {{currentUser.lastName}}</h5>
+        <h5 class="mb-1 userText">
+          {{ currentUser.firstName }} {{ currentUser.lastName }}
+        </h5>
         <button class="btn ask_help_btn" (click)="askHelp()">
           Ask for help
         </button>
@@ -33,7 +35,7 @@
       </div>
       <div>
         <p class="mb-2 pb-1" style="color: #2b2a2a; font-size: 1.2rem">
-          {{currentUser.about}}
+          {{ currentUser.about }}
         </p>
       </div>
       <div class="mt-4">
@@ -57,3 +59,8 @@
     </div>
   </section>
 </main>
+
+<a href=""
+  ><p class="text"></p>
+  <i class="icon"></i
+></a>

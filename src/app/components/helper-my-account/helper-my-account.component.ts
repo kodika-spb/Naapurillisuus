@@ -33,17 +33,13 @@ export class HelperMyAccountComponent implements OnInit {
        if(user.uid === loggedUser['uid']){
        console.log(user);
        this.currentUser = user
-       this.qrData = user.firstName + user.lastName
+       this.qrData = `${user.firstName} ${user.lastName } ${user.role}`
        }
        return this.currentUser
       });
       console.log(this.currentUser);
     });
   }
-  /* this.user = this.userDataService.getCurrentUser().subscribe((data) => {
-    console.log(data);
-    return this.user
-    }); */
   askHelp() {
     this.router.navigate(['client-task-form']);
   }
