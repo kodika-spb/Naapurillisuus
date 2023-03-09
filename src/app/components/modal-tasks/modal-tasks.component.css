@@ -1,30 +1,11 @@
-.container {
-  width: 90%;
+section::backdrop{
+  filter: brightness(50%);
 }
-.contact_form {
-  width: 50%;
-  position: absolute;
-  top: 10%;
-  padding: 1rem;
-  background: white;
-}
-.text-area {
-  border: 1px solid #ced4da;
-  width: 100%;
-}
-.btn-contact {
-  background-color: var(--main-color);
-  color: white;
-}
-section::backdrop {
-  background: rgb(179, 177, 177);
-}
-
 .modal-view {
   width: 40%;
   height: auto;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 30%;
   border-radius: 1rem;
   background-color: white;

@@ -10,6 +10,9 @@
   margin: 2rem;
   padding: 0;
 }
+.userText{
+  font-size: 2rem;
+}
 .urgently {
   color: var(--brown);
   background-color: var(--emergency);
@@ -76,11 +79,24 @@
 .text-qr {
   margin-left: 1.5rem;
 }
+.ask_help_btn{
+  background-color: var(--main-client);
+  color: white;
+  width: 30%;
+}
 @media only screen and (max-width: 768px) {
+  .userText{
+    font-size: 1.2rem;
+  }
   .card-img {
     width: 300px;
     height: 300px;
     margin-bottom: 1rem;
+  }
+  .ask_help_btn{
+    width: 29%;
+    height: 30px;
+    font-size: 0.7em;
   }
 }
 
@@ -113,6 +129,8 @@
   .qrcode {
     margin-left: 1.5rem;
   }
+ 
+
 }
 @media only screen and (max-width: 375px) {
   .task_list,
@@ -121,9 +139,14 @@
     margin: 0.5em;
   }
   .card-img {
-    width: 320px;
+    width: 310px;
     height: 300px;
     margin-bottom: 1rem;
+  }
+  .ask_help_btn{
+    width: 29%;
+    height: 30px;
+    font-size: 0.7em;
   }
 }
 @media only screen and (max-width: 320px) {

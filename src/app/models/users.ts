@@ -11,4 +11,5 @@ export interface User{
   role: string;
   phoneNumber?: string,
   photoURL?: string | null;
-}
+} 
+
