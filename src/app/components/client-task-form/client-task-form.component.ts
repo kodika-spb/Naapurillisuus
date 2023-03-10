@@ -1,34 +1,41 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { User } from 'src/app/models/users';
+import { UserDataService } from 'src/app/services/user-data.service';
 import {
-	NgbCalendar,
-	NgbDateAdapter,
-	NgbDateParserFormatter,
-	NgbDatepickerModule,
-	NgbDateStruct,
+  NgbCalendar,
+  NgbDateAdapter,
+  NgbDateParserFormatter,
+  NgbDatepickerModule,
+  NgbDateStruct,
 } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 
 @Injectable()
 export class CustomAdapter extends NgbDateAdapter<string> {
-	readonly DELIMITER = '-';
+  readonly DELIMITER = '-';
 
-	fromModel(value: string | null): NgbDateStruct | null {
-		if (value) {
-			const date = value.split(this.DELIMITER);
-			return {
-				day: parseInt(date[0], 10),
-				month: parseInt(date[1], 10),
-				year: parseInt(date[2], 10),
-			};
-		}
-		return null;
-	}
+  fromModel(value: string | null): NgbDateStruct | null {
+    if (value) {
+      const date = value.split(this.DELIMITER);
+      return {
+        day: parseInt(date[0], 10),
+        month: parseInt(date[1], 10),
+        year: parseInt(date[2], 10),
+      };
+    }
+    return null;
+  }
 
-	toModel(date: NgbDateStruct | null): string | null {
-		return date ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year : null;
-	}
+  toModel(date: NgbDateStruct | null): string | null {
+    return date
+      ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year
+      : null;
+  }
 }
 
 /**
@@ -36,23 +43,25 @@ export class CustomAdapter extends NgbDateAdapter<string> {
  */
 @Injectable()
 export class CustomDateParserFormatter extends NgbDateParserFormatter {
-	readonly DELIMITER = '/';
+  readonly DELIMITER = '/';
 
-	parse(value: string): NgbDateStruct | null {
-		if (value) {
-			const date = value.split(this.DELIMITER);
-			return {
-				day: parseInt(date[0], 10),
-				month: parseInt(date[1], 10),
-				year: parseInt(date[2], 10),
-			};
-		}
-		return null;
-	}
+  parse(value: string): NgbDateStruct | null {
+    if (value) {
+      const date = value.split(this.DELIMITER);
+      return {
+        day: parseInt(date[0], 10),
+        month: parseInt(date[1], 10),
+        year: parseInt(date[2], 10),
+      };
+    }
+    return null;
+  }
 
-	format(date: NgbDateStruct | null): string {
-		return date ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year : '';
-	}
+  format(date: NgbDateStruct | null): string {
+    return date
+      ? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year
+      : '';
+  }
 }
 
 @Component({
@@ -60,25 +69,45 @@ export class CustomDateParserFormatter extends NgbDateParserFormatter {
   templateUrl: './client-task-form.component.html',
   styleUrls: ['./client-task-form.component.css'],
   providers: [
-	{ provide: NgbDateAdapter, useClass: CustomAdapter },
-	{ provide: NgbDateParserFormatter, useClass: CustomDateParserFormatter },
-],
+    { provide: NgbDateAdapter, useClass: CustomAdapter },
+    { provide: NgbDateParserFormatter, useClass: CustomDateParserFormatter },
+  ],
 })
-export class ClientTaskFormComponent {
-	model1: string;
-	model2: string;
+export class ClientTaskFormComponent implements OnInit {
+  @Input() user: User;
 
-	constructor(private router: Router, private ngbCalendar: NgbCalendar, private dateAdapter: NgbDateAdapter<string>) {}
-  
-	ngOnInit(): void {}
-  
-	addToClientTask(){
-	this.router.navigate(['/client-tasks/my-tasks'])
-	}
-	get today() {
-		return this.dateAdapter.toModel(this.ngbCalendar.getToday())!;
-	}
+  model1: string;
+  model2: string;
+  currentClient: any;
+
+  constructor(
+    private ngbCalendar: NgbCalendar,
+    private dateAdapter: NgbDateAdapter<string>,
+    private router: Router,
+    public userDataService: UserDataService,
+    private db: AngularFirestore,
+    private afAuth: AngularFireAuth
+  ) {}
+
+  ngOnInit(): void {
+    let loggedUser = JSON.parse(localStorage.getItem('user')!);
+    this.userDataService.getAllUserData().subscribe((users) => {
+      users.forEach((user) => {
+        if (user.uid === loggedUser['uid']) {
+          console.log(user);
+          this.currentClient = user;
+        }
+        return this.currentClient;
+      });
+      console.log(this.currentClient);
+    });
   }
 
-  
+  addToClientTask() {
+    this.router.navigate(['/client-tasks/my-tasks']);
+  }
 
+  get today() {
+    return this.dateAdapter.toModel(this.ngbCalendar.getToday())!;
+  }
+}

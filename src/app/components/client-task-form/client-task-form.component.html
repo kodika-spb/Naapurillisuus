@@ -6,16 +6,16 @@
     <article class="personalinfo">
       <p><strong>Your Information</strong></p>
       <p>
-        Name <br />
-        Surname
+        {{currentClient.firstName}} <br />
+        {{currentClient.lastName}}
       </p>
       <a href="">Edit Information</a>
     </article>
     <article class="address">
       <p><strong>Your Address</strong></p>
       <p>
-        Zip code <br />
-        City, Street Address
+        {{currentClient.zip}} <br />
+        {{currentClient.city}}, {{currentClient.address}}
       </p>
       <a href="">Edit Information</a>
     </article>

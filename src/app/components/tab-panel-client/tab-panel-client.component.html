@@ -24,15 +24,16 @@
         >
           Done
         </a>
-      </li>
-      <li [ngbNavItem]="4" class="call-nav-item">
+      </ng-container >
+      <ng-container  [ngbNavItem]="4" class="nav-item">
         <a
           ngbNavLink
-          routerLink=""
+          routerLink="client-tasks/call"
           role="tab"
-          class="call-nav-link"> Call for help 
-        <i class="bi bi-telephone-outbound-fill"></i>
+          class=" call-nav-link"
+        > <i class="phone bi bi-telephone-outbound-fill"></i>
+        <p class="call-text">Call for help</p>
         </a>
-      </li>
-    </ul>
+      </ng-container >
+    </nav>
   </section>

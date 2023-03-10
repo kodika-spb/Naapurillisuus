@@ -60,7 +60,7 @@ import { VolunteerCardFClientComponent } from './components/volunteer-card-f-cli
     TabPanelClientComponent,
     ClientTaskFormComponent,
     ChatComponent,
-    ModalTasksComponent
+    ModalTasksComponent,
     ClientTaskFormComponent,
     VolunteerCardFClientComponent
   ],

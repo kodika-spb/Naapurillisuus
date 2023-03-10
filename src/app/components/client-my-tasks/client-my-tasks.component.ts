@@ -9,9 +9,9 @@ import { VolunteerCardFClientComponent } from '../volunteer-card-f-client/volunt
 })
 export class ClientMyTasksComponent {
   
-  volunteer_visible = false;
+  isVisible = false;
 
-  showVolunteer() {
-    this.volunteer_visible = !this.volunteer_visible;
-  }
+  // showVolunteer() {
+  //   this.volunteer_visible = !this.volunteer_visible;
+  // }
 }
