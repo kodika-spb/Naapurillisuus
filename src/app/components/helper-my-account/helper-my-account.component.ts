@@ -12,7 +12,7 @@ import { UserDataService } from 'src/app/services/user-data.service';
   styleUrls: ['./helper-my-account.component.css'],
 })
 export class HelperMyAccountComponent implements OnInit {
-  @Input() user: User;
+  @Input() 
 
   myQrCode: boolean = false;
   imgUrl = "https://source.unsplash.com/random/?user,face/300x202"
@@ -22,25 +22,22 @@ export class HelperMyAccountComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public userDataService: UserDataService,
     private db: AngularFirestore,
     private afAuth: AngularFireAuth
   ) {}
 
   ngOnInit(): void {
     let loggedUser = JSON.parse(localStorage.getItem('user')!);
-    this.userDataService.getAllUserData().subscribe((users) => {
-      users.forEach((user) => {
-        if (user.uid === loggedUser['uid']) {
-          console.log(user);
-          this.currentUser = user;
-          this.qrData = `${user.firstName} ${user.lastName} ${user.role}`;
-        }
-        return this.currentUser;
-      });
+       this.currentUser = loggedUser;
+       this.qrData = this.currentUser.firstName + this.currentUser.lastName
       console.log(this.currentUser);
-    });
-  }
+    };
+  
+  /* this.user = this.userDataService.getCurrentUser().subscribe((data) => {
+    console.log(data);
+    return this.user
+    }); */
+
   askHelp() {
     this.router.navigate(['client-task-form']);
   }
