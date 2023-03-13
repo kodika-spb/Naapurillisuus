@@ -19,7 +19,6 @@ export class RoleGuard implements CanActivate {
         if (canActivateProtectedRoutes) {
           // role check only if route contain data.role
           // https://javascript.plainenglish.io/4-ways-to-check-whether-the-property-exists-in-a-javascript-object-20c2d96d8f6e
-          console.log('userProfileRole',this.userProfile)
           if (route.data.role === this.userProfile['role']) {
             return true
           }
