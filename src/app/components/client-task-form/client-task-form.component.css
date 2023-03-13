@@ -13,7 +13,7 @@
   .comment,
   .helptype, 
   .date {
-    margin: 2rem;
+    margin: 1rem 0;
     padding: 0;
   }
 
@@ -28,6 +28,7 @@
     color: white;
     border: 1px solid var(--main-client);
     background-color: var(--main-client);
+    align-self: center;
   }
   .save_btn {
     width: 25%;
@@ -36,6 +37,7 @@
     color: white;
     border: 1px solid var(--main-client);
     background-color: var(--main-client);
+    align-self: center;
     
   }
 

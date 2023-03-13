@@ -5,19 +5,9 @@ import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { User } from 'src/app/models/users';
 import { UserDataService } from 'src/app/services/user-data.service';
-import {
-  NgbCalendar,
-  NgbDateAdapter,
-  NgbDateParserFormatter,
-  NgbDatepickerModule,
-  NgbDateStruct,
-} from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
 import { ClientDataService } from 'src/app/services/client-data.service';
 import { CTask } from 'src/app/models/client-tasks';
-
-
 
 
 @Component({
@@ -37,8 +27,6 @@ export class ClientTaskFormComponent implements OnInit {
   tasksCollection: AngularFirestoreCollection<CTask>
 
   constructor(
-    private ngbCalendar: NgbCalendar,
-    private dateAdapter: NgbDateAdapter<string>,
     private router: Router,
     public userDataService: UserDataService,
     private db: AngularFirestore,
@@ -74,7 +62,4 @@ export class ClientTaskFormComponent implements OnInit {
     this.clientDataService.sendTaskData(this.addTaskForm.value)
   }
 
-  get today() {
-    return this.dateAdapter.toModel(this.ngbCalendar.getToday())!;
-  }
 }

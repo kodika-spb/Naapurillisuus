@@ -40,6 +40,7 @@
   color: white;
   margin-top: 1rem;
   padding: 0.5em;
+  align-self: center;
 }
 .btn:hover {
   background-color: white;
