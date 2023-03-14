@@ -8,6 +8,9 @@
       </p>
       <a href="">Edit Information</a>
     </article>
+
+    <!-- Address and change address -->
+
     <article class="address">
       <p><strong>Your Address</strong></p>
       <p>
@@ -20,13 +23,13 @@
     <!-- task form -->
     <form [formGroup]="addTaskForm" (ngSubmit)="addToClientTask()">
       <article class="my-3 helptype col-6">
-        <p>Type of help:</p>
+        <p> <strong>Type of help:</strong></p>
         <select class="form-select" required="" formControlName="helpType">
           <option value="">Choose...</option>
-          <option>Can't make an order</option>
-          <option>Can't make an order by phone</option>
-          <option>Not satisfied with help</option>
-          <option>Having problems with a volunteer</option>
+          <option>Help with shopping</option>
+          <option>Walk with my pet</option>
+          <option>Help with moving</option>
+          <option>Help with PC or other gadgets</option>
           <option>Other</option>
         </select>
         <p
@@ -42,7 +45,8 @@
       </article>
 
       <article class="col-6 my-3 helptype">
-        <p>Enter period:</p>
+      
+        <p> <strong>Enter period:</strong></p>
 
         <select class="form-select" required="" formControlName="period">
           <option value="">Choose suitable period</option>
