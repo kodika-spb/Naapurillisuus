@@ -23,43 +23,48 @@ const routes: Routes = [
   { path: 'contact-form', component: ContactFormComponent },
   { path: 'client-form', component: ClientFormComponent },
 
-    {
-      path: 'helper-dashboard',
-      component: HelperDashboardComponent,
-      canActivate: [AuthGuard, RoleGuard], 
-      data: {role: 'volunteer'},
-    },
-    { path: 'helper-dashboard/my_tasks',
-    component: HelpersTasksComponent, 
-    canActivate: [AuthGuard, RoleGuard], 
-    data: {role: 'volunteer'} 
-    },
-    { path: 'helper-dashboard/done', 
-    component: HelperDoneComponent, 
-    canActivate: [AuthGuard, RoleGuard], 
-    data: {role: 'volunteer'}
-    },
-    { path: 'helper-dashboard/my-account', 
-    component: HelperMyAccountComponent, 
-    canActivate: [AuthGuard, RoleGuard], 
-    data: {role: 'volunteer'}
-    }, 
-
-    { path: 'client-task-form', 
-      component: ClientTaskFormComponent, 
-      canActivate: [AuthGuard, RoleGuard], 
-      data: {role: 'client'}
-    },
-    { path: 'client-tasks/my-tasks', 
-      component: ClientMyTasksComponent, 
-      canActivate: [AuthGuard, RoleGuard], 
-      data: {role: 'client'}
-      },
-    { path: 'client-tasks/done', 
-      component: ClientDoneComponent, 
-      canActivate: [AuthGuard, RoleGuard], 
-      data: {role: 'client'}
-    },
+  {
+    path: 'helper-dashboard',
+    component: HelperDashboardComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: 'volunteer' },
+  },
+  {
+    path: 'helper-dashboard/my_tasks',
+    component: HelpersTasksComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: 'volunteer' },
+  },
+  {
+    path: 'helper-dashboard/done',
+    component: HelperDoneComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: 'volunteer' },
+  },
+  {
+    path: 'helper-dashboard/my-account',
+    component: HelperMyAccountComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: 'volunteer' },
+  },
+  {
+    path: 'client-task-form',
+    component: ClientTaskFormComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: 'client' },
+  },
+  {
+    path: 'client-tasks/my-tasks',
+    component: ClientMyTasksComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: 'client' },
+  },
+  {
+    path: 'client-tasks/done',
+    component: ClientDoneComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: 'client' },
+  },
 ];
 
 @NgModule({

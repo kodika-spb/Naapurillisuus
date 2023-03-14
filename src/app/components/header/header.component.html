@@ -4,7 +4,7 @@
       >
         <a
           *ngIf="(afAuth.user | async)"
-          [routerLink]="['helper-dashboard']"
+          [routerLink]="['']"
           class="logo col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
           <img [src]="imgUrl" alt="" />
@@ -12,7 +12,7 @@
 
         <a
           *ngIf="!(afAuth.user | async)"
-          [routerLink]="['']"
+          [routerLink]="['/sign-in']"
           class="logo text-decoration-none"
         >
           <img [src]="imgUrl" alt="" />

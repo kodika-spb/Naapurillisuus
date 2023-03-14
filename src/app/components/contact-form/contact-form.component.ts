@@ -32,9 +32,6 @@ export class ContactFormComponent implements OnInit {
   title: string = 'Thanks for your submission.';
 
   constructor(
-    private firestore: Firestore,
-    private afs: AngularFirestore,
-    private db: AngularFirestore,
     public contactUsService: ContactUsService,
     public modalService: ModalService
   ) {}
