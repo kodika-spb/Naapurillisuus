@@ -10,6 +10,9 @@
   margin: 2rem;
   padding: 0;
 }
+.alert{
+  margin: 2rem;
+}
 .urgently {
   color: var(--brown);
   background-color: var(--emergency);

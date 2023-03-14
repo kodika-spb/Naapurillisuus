@@ -1,4 +1,4 @@
-import { Component,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VTask } from 'src/app/models/vtasks';
 import { tasks as data } from 'src/app/data/tasks';
 import { Router } from '@angular/router';
@@ -14,14 +14,17 @@ export class HelperDashboardComponent implements OnInit {
   myQrCode: boolean = false;
   tasks: VTask[] = data;
   active: any;
+  alert: boolean = false;
 
-  constructor(
-    private router: Router,
-  ) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   addToMyTasks() {
-    this.router.navigate(['/helper-dashboard/my_tasks']);
+    this.alert = true;
+  }
+
+  closeAlert(){
+    this.alert = false
   }
 }

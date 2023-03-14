@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class HeaderComponent {
   imgUrl = 'assets/logotip.png';
-  constructor(public afAuth: AngularFireAuth) {}
+  constructor(public afAuth: AngularFireAuth, private router: Router) {}
 
   logout(): void {
     this.afAuth.signOut();
@@ -29,8 +30,7 @@ export class HeaderComponent {
       [
         '/client-task-form',
         '/client-tasks/my-tasks',
-        '/client-tasks/done'
-      
+        '/client-tasks/done',
       ].indexOf(window.location.pathname) != -1
     );
   }
